@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Modular Fabricator -->
+  <RPThingMaker.label>Modular Fabricator</RPThingMaker.label>
+  <!-- EN: An automated machine with 3d printing, laser etching and plasma cutting capabilities:\n\n\nValid Recipes:\n\nComponents: RimPoly and Electrosteel Wool.\n\nAdvanced Components: RimPoly, Electrosteel Wool and Gold Wool. -->
+  <RPThingMaker.description>An automated machine with 3d printing, laser etching and plasma cutting capabilities:
+
+
+Valid Recipes:
+
+Components: RimPoly and Electrosteel Wool.
+
+Advanced Components: RimPoly, Electrosteel Wool and Gold Wool.</RPThingMaker.description>
+  <!-- EN: Modular Fabricator Input -->
+  <RPThingMakerInput.label>Modular Fabricator Input</RPThingMakerInput.label>
+  <!-- EN: Holds input resources for use by the modular fabricator during production. -->
+  <RPThingMakerInput.description>Holds input resources for use by the modular fabricator during production.</RPThingMakerInput.description>
+  <!-- EN: Modular Fabricator Output -->
+  <RPThingMakerOutput.label>Modular Fabricator Output</RPThingMakerOutput.label>
+  <!-- EN: Holds output products from the modular fabricator. -->
+  <RPThingMakerOutput.description>Holds output products from the modular fabricator.</RPThingMakerOutput.description>
+</LanguageData>

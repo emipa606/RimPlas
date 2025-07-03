@@ -52,7 +52,7 @@ public class RPGraphene_Vent : Building_TempControl
         }
     }
 
-    public void ToggleUseFixed(bool flag)
+    private void ToggleUseFixed(bool flag)
     {
         UseFixed = !flag;
     }
@@ -60,7 +60,7 @@ public class RPGraphene_Vent : Building_TempControl
     public override void TickRare()
     {
         var tempRange = default(FloatRange);
-        GetSafeTemps(this, UseFixed, out var tempMin, out var tempMax);
+        GetSafeTemps(UseFixed, out var tempMin, out var tempMax);
         tempRange.min = tempMin;
         tempRange.max = tempMax;
         if (UseFixed && RPGVentCheckTemps(this, tempRange) || !UseFixed)
@@ -116,12 +116,12 @@ public class RPGraphene_Vent : Building_TempControl
         return stringBuilder.ToString();
     }
 
-    internal bool VentIsWorking(Building b)
+    private bool VentIsWorking(Building b)
     {
         return !b.IsBrokenDown();
     }
 
-    internal void GetSafeTemps(Building b, bool Fixed, out float min, out float max)
+    private void GetSafeTemps(bool Fixed, out float min, out float max)
     {
         min = -9999f;
         max = 9999f;
@@ -134,7 +134,7 @@ public class RPGraphene_Vent : Building_TempControl
         max = Controller.Settings.GVentMax;
     }
 
-    internal bool RPGVentCheckTemps(Building b, FloatRange tempRange)
+    private bool RPGVentCheckTemps(Building b, FloatRange tempRange)
     {
         for (var i = 0; i < 2; i++)
         {

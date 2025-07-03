@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: RimPlas Animal Box -->
+  <RimPlas_AnimalSleepingBox.label>RimPlas Animal Box</RimPlas_AnimalSleepingBox.label>
+  <!-- EN: A small box for animals to sleep in. Fits smaller animals like chickens, cats, or small dogs. -->
+  <RimPlas_AnimalSleepingBox.description>A small box for animals to sleep in. Fits smaller animals like chickens, cats, or small dogs.</RimPlas_AnimalSleepingBox.description>
+  <!-- EN: RimPlas Barrier -->
+  <RimPlas_Barrier.label>RimPlas Barrier</RimPlas_Barrier.label>
+  <!-- EN: RimPlas barrier that provides some cover and protection. Easy and quick to construct but slightly flammable. Lighter but less robust than sandbags -->
+  <RimPlas_Barrier.description>RimPlas barrier that provides some cover and protection. Easy and quick to construct but slightly flammable. Lighter but less robust than sandbags</RimPlas_Barrier.description>
+  <!-- EN: RimPlas Chess Table -->
+  <RimPlas_ChessTable.label>RimPlas Chess Table</RimPlas_ChessTable.label>
+  <!-- EN: The ancient game of kings. Fun for a few hours here and there, even playing alone. It trains intellectual skills. -->
+  <RimPlas_ChessTable.description>The ancient game of kings. Fun for a few hours here and there, even playing alone. It trains intellectual skills.</RimPlas_ChessTable.description>
+  <!-- EN: RimPlas Dining Chair -->
+  <RimPlas_DiningChair.label>RimPlas Dining Chair</RimPlas_DiningChair.label>
+  <!-- EN: A comfortable and attractive chair. Can be used at tables, work stations, and elsewhere. -->
+  <RimPlas_DiningChair.description>A comfortable and attractive chair. Can be used at tables, work stations, and elsewhere.</RimPlas_DiningChair.description>
+  <!-- EN: RimPlas Dresser -->
+  <RimPlas_Dresser.label>RimPlas Dresser</RimPlas_Dresser.label>
+  <!-- EN: A dresser. Gives a small comfort bonus to all nearby beds. Placing more than one dresser near the same bed has no effect. -->
+  <RimPlas_Dresser.description>A dresser. Gives a small comfort bonus to all nearby beds. Placing more than one dresser near the same bed has no effect.</RimPlas_Dresser.description>
+  <!-- EN: RimPlas Drug Cabinet -->
+  <RimPlas_DrugCabinet.label>RimPlas Drug Cabinet</RimPlas_DrugCabinet.label>
+  <!-- EN: A small cabinet to store drugs. Includes a small cleanliness boost and a production boost to drug lab benches. -->
+  <RimPlas_DrugCabinet.description>A small cabinet to store drugs. Includes a small cleanliness boost and a production boost to drug lab benches.</RimPlas_DrugCabinet.description>
+  <!-- EN: RimPlas End Table -->
+  <RimPlas_EndTable.label>RimPlas End Table</RimPlas_EndTable.label>
+  <!-- EN: A small bedside table which makes nearby beds a little bit more comfortable. Must be placed directly adjacent to the head of the bed. Placing more than one end table near the same bed has no effect. -->
+  <RimPlas_EndTable.description>A small bedside table which makes nearby beds a little bit more comfortable. Must be placed directly adjacent to the head of the bed. Placing more than one end table near the same bed has no effect.</RimPlas_EndTable.description>
+  <!-- EN: RimPlas Game-of-Ur board -->
+  <RimPlas_GameOfUr.label>RimPlas Game-of-Ur board</RimPlas_GameOfUr.label>
+  <!-- EN: Dating from 2500BC, this exciting yet infuriating board game can be played by one or two people. It trains intellectual skills. -->
+  <RimPlas_GameOfUr.description>Dating from 2500BC, this exciting yet infuriating board game can be played by one or two people. It trains intellectual skills.</RimPlas_GameOfUr.description>
+  <!-- EN: RimPlas Plant Pot -->
+  <RimPlas_PlantPot.label>RimPlas Plant Pot</RimPlas_PlantPot.label>
+  <!-- EN: Plant decorative flowers here to improve the mood of people nearby. -->
+  <RimPlas_PlantPot.description>Plant decorative flowers here to improve the mood of people nearby.</RimPlas_PlantPot.description>
+  <!-- EN: RimPlas Small Shelf -->
+  <RimPlas_Rack.label>RimPlas Small Shelf</RimPlas_Rack.label>
+  <!-- EN: Items stored in this will not deteriorate, even if outside. -->
+  <RimPlas_Rack.description>Items stored in this will not deteriorate, even if outside.</RimPlas_Rack.description>
+  <!-- EN: RimPlas Shelf -->
+  <RimPlas_Shelf.label>RimPlas Shelf</RimPlas_Shelf.label>
+  <!-- EN: A shelf for storing miscellaneous items. Items stored in this will not deteriorate, even if outside. -->
+  <RimPlas_Shelf.description>A shelf for storing miscellaneous items. Items stored in this will not deteriorate, even if outside.</RimPlas_Shelf.description>
+  <!-- EN: RimPlas Stool -->
+  <RimPlas_Stool.label>RimPlas Stool</RimPlas_Stool.label>
+  <!-- EN: A simple platform on which to sit. Not very comfortable, but much better than nothing. Can be used at tables, work stations, and elsewhere. -->
+  <RimPlas_Stool.description>A simple platform on which to sit. Not very comfortable, but much better than nothing. Can be used at tables, work stations, and elsewhere.</RimPlas_Stool.description>
+  <!-- EN: RimPlas Table (1x2) -->
+  <RimPlas_Table_Small.label>RimPlas Table (1x2)</RimPlas_Table_Small.label>
+  <!-- EN: People eat off tables when chairs are placed facing them. -->
+  <RimPlas_Table_Small.description>People eat off tables when chairs are placed facing them.</RimPlas_Table_Small.description>
+  <!-- EN: Rimplas Table (1x1) -->
+  <RimPlas_Table_Tiny.label>Rimplas Table (1x1)</RimPlas_Table_Tiny.label>
+  <!-- EN: People eat off tables when chairs are placed facing them. -->
+  <RimPlas_Table_Tiny.description>People eat off tables when chairs are placed facing them.</RimPlas_Table_Tiny.description>
+</LanguageData>

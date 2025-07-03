@@ -94,7 +94,7 @@ public class Building_TempRegulator : Building_TempControl
                 tempdiff = tempexhaust - 40f;
             }
 
-            var numcool = 1f - (tempdiff * 0.0076923077f);
+            var numcool = 1f - (tempdiff * EfficiencyLossPerDegreeDifference);
             if (numcool < 0f)
             {
                 numcool = 0f;
@@ -106,7 +106,7 @@ public class Building_TempRegulator : Building_TempControl
             if (!Mathf.Approximately(tempdelta2, temptolerance))
             {
                 coolercell.GetRoomOrAdjacent(Map).Temperature += tempdelta2;
-                GenTemperature.PushHeat(exhaustcell, Map, (0f - energyLimit) * 1.25f);
+                GenTemperature.PushHeat(exhaustcell, Map, (0f - energyLimit) * HeatOutputMultiplier);
                 powered = true;
             }
         }

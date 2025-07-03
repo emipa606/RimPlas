@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Security door stun effect -->
+  <HED_RPSecStun.label>Security door stun effect</HED_RPSecStun.label>
+  <!-- EN: Security door stun effect -->
+  <HED_RPSecStun.description>Security door stun effect</HED_RPSecStun.description>
+  <!-- EN: Stunned -->
+  <HED_RPSecStun.stages.Stunned.label>Stunned</HED_RPSecStun.stages.Stunned.label>
+</LanguageData>

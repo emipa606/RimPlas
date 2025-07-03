@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Fortrimica Composite -->
+  <FortRimica.label>Fortrimica Composite</FortRimica.label>
+  <!-- EN: Grants the ability to make fortified Rimica. -->
+  <FortRimica.description>Grants the ability to make fortified Rimica.</FortRimica.description>
+  <!-- EN: Rimica Composite -->
+  <Rimica.label>Rimica Composite</Rimica.label>
+  <!-- EN: Grants the ability to make Rimica. -->
+  <Rimica.description>Grants the ability to make Rimica.</Rimica.description>
+  <!-- EN: Rimoprene -->
+  <Rimoprene.label>Rimoprene</Rimoprene.label>
+  <!-- EN: Grants the ability to use a new synthetic leather-like textile. -->
+  <Rimoprene.description>Grants the ability to use a new synthetic leather-like textile.</Rimoprene.description>
+  <!-- EN: Semi-synthetics -->
+  <RimPlas_SemiSynth.label>Semi-synthetics</RimPlas_SemiSynth.label>
+  <!-- EN: Grants the ability to use new materials. -->
+  <RimPlas_SemiSynth.description>Grants the ability to use new materials.</RimPlas_SemiSynth.description>
+  <!-- EN: Synthetic Materials -->
+  <RimPlas_Synth.label>Synthetic Materials</RimPlas_Synth.label>
+  <!-- EN: Grants the ability to make synthetic textiles and leads to further synthetic research. -->
+  <RimPlas_Synth.description>Grants the ability to make synthetic textiles and leads to further synthetic research.</RimPlas_Synth.description>
+  <!-- EN: Synthesise Plasteel -->
+  <RimPlas_Synth_Plasteel.label>Synthesise Plasteel</RimPlas_Synth_Plasteel.label>
+  <!-- EN: Grants the ability to make Plasteel. -->
+  <RimPlas_Synth_Plasteel.description>Grants the ability to make Plasteel.</RimPlas_Synth_Plasteel.description>
+  <!-- EN: RimThermoPlas -->
+  <RimThermoPlas.label>RimThermoPlas</RimThermoPlas.label>
+  <!-- EN: Grants the ability to use new materials. -->
+  <RimThermoPlas.description>Grants the ability to use new materials.</RimThermoPlas.description>
+</LanguageData>

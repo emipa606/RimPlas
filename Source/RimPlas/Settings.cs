@@ -19,40 +19,40 @@ public class Settings : ModSettings
 
     public void DoWindowContents(Rect canvas)
     {
-        var listing_Standard = new Listing_Standard { ColumnWidth = canvas.width };
-        listing_Standard.Begin(canvas);
-        listing_Standard.Gap();
+        var listingStandard = new Listing_Standard { ColumnWidth = canvas.width };
+        listingStandard.Begin(canvas);
+        listingStandard.Gap();
         checked
         {
-            listing_Standard.Label("RimPlas.ResPct".Translate() + "  " + (int)ResPct);
-            ResPct = (int)listing_Standard.Slider((int)ResPct, 10f, 200f);
-            listing_Standard.Gap();
+            listingStandard.Label("RimPlas.ResPct".Translate() + "  " + (int)ResPct);
+            ResPct = (int)listingStandard.Slider((int)ResPct, 10f, 200f);
+            listingStandard.Gap();
             Text.Font = GameFont.Tiny;
-            listing_Standard.Label("          " + "RimPlas.ResWarn".Translate());
-            listing_Standard.Gap();
-            listing_Standard.Label("          " + "RimPlas.ResTip".Translate());
+            listingStandard.Label("          " + "RimPlas.ResWarn".Translate());
+            listingStandard.Gap();
+            listingStandard.Label("          " + "RimPlas.ResTip".Translate());
             Text.Font = GameFont.Small;
-            listing_Standard.Gap();
-            listing_Standard.Label("RimPlas.GVentMin".Translate() + "  " + (int)GVentMin);
-            GVentMin = (int)listing_Standard.Slider(GVentMin, -20f, 20f);
-            listing_Standard.Gap();
-            listing_Standard.Label("RimPlas.GVentMax".Translate() + "  " + (int)GVentMax);
-            GVentMax = (int)listing_Standard.Slider(GVentMax, 25f, 50f);
-            listing_Standard.Gap();
-            listing_Standard.CheckboxLabeled("RimPlas.AllowPainCtrlHB".Translate(), ref AllowPainCtrlHB);
-            listing_Standard.Gap();
-            listing_Standard.CheckboxLabeled("RimPlas.AllowRecCtrlHB".Translate(), ref AllowRecCtrlHB);
-            listing_Standard.Gap();
-            listing_Standard.CheckboxLabeled("RimPlas.AllowMentalCtrlHB".Translate(), ref AllowMentalCtrlHB);
-            if (Controller.currentVersion != null)
+            listingStandard.Gap();
+            listingStandard.Label("RimPlas.GVentMin".Translate() + "  " + (int)GVentMin);
+            GVentMin = (int)listingStandard.Slider(GVentMin, -20f, 20f);
+            listingStandard.Gap();
+            listingStandard.Label("RimPlas.GVentMax".Translate() + "  " + (int)GVentMax);
+            GVentMax = (int)listingStandard.Slider(GVentMax, 25f, 50f);
+            listingStandard.Gap();
+            listingStandard.CheckboxLabeled("RimPlas.AllowPainCtrlHB".Translate(), ref AllowPainCtrlHB);
+            listingStandard.Gap();
+            listingStandard.CheckboxLabeled("RimPlas.AllowRecCtrlHB".Translate(), ref AllowRecCtrlHB);
+            listingStandard.Gap();
+            listingStandard.CheckboxLabeled("RimPlas.AllowMentalCtrlHB".Translate(), ref AllowMentalCtrlHB);
+            if (Controller.CurrentVersion != null)
             {
-                listing_Standard.Gap();
+                listingStandard.Gap();
                 GUI.contentColor = Color.gray;
-                listing_Standard.Label("RimPlas.CurrentModVersion".Translate(Controller.currentVersion));
+                listingStandard.Label("RimPlas.CurrentModVersion".Translate(Controller.CurrentVersion));
                 GUI.contentColor = Color.white;
             }
 
-            listing_Standard.End();
+            listingStandard.End();
         }
     }
 

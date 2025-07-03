@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: disassemble mechanoid -->
+  <RPButcherCorpseMechanoid.label>disassemble mechanoid</RPButcherCorpseMechanoid.label>
+  <!-- EN: Disassemble a dead mechanoid into its component parts. -->
+  <RPButcherCorpseMechanoid.description>Disassemble a dead mechanoid into its component parts.</RPButcherCorpseMechanoid.description>
+  <!-- EN: Disassembling mechanoid. -->
+  <RPButcherCorpseMechanoid.jobString>Disassembling mechanoid.</RPButcherCorpseMechanoid.jobString>
+</LanguageData>

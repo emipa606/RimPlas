@@ -4,13 +4,11 @@ using Verse;
 
 namespace RimPlas;
 
-[HarmonyPatch(typeof(Plant))]
-[HarmonyPatch("GrowthRateFactor_Temperature", MethodType.Getter)]
-public class GrowthRateFactor_Temperature_Patch
+[HarmonyPatch(typeof(Plant), nameof(Plant.GrowthRateFactor_Temperature), MethodType.Getter)]
+[HarmonyPriority(800)]
+public class Plant_GrowthRateFactor_Temperature
 {
-    [HarmonyPrefix]
-    [HarmonyPriority(800)]
-    public static bool PreFix(ref Plant __instance, ref float __result)
+    public static bool Prefix(ref Plant __instance, ref float __result)
     {
         var plant = __instance;
         if (plant?.Map == null)

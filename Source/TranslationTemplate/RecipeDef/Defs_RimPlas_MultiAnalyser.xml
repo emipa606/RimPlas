@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Make RimPlas multianalyzer -->
+  <RCP_RPMultiAnalyzer.label>Make RimPlas multianalyzer</RCP_RPMultiAnalyzer.label>
+  <!-- EN: Make a RimPlas multianalyser. -->
+  <RCP_RPMultiAnalyzer.description>Make a RimPlas multianalyser.</RCP_RPMultiAnalyzer.description>
+  <!-- EN: Making a RimPlas multianalyser. -->
+  <RCP_RPMultiAnalyzer.jobString>Making a RimPlas multianalyser.</RCP_RPMultiAnalyzer.jobString>
+  <!-- EN: Mould RimPlas multianalyzer part -->
+  <RimPlasMouldRPMAPart.label>Mould RimPlas multianalyzer part</RimPlasMouldRPMAPart.label>
+  <!-- EN: Mould RimPlas multianalyzer part. -->
+  <RimPlasMouldRPMAPart.description>Mould RimPlas multianalyzer part.</RimPlasMouldRPMAPart.description>
+  <!-- EN: Moulding RimPlas multianalyzer part. -->
+  <RimPlasMouldRPMAPart.jobString>Moulding RimPlas multianalyzer part.</RimPlasMouldRPMAPart.jobString>
+</LanguageData>

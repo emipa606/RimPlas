@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: RimPlas Advanced Injection Moulder -->
+  <RimPlas_AdvInjMld.label>RimPlas Advanced Injection Moulder</RimPlas_AdvInjMld.label>
+  <!-- EN: Moulds complex materials. -->
+  <RimPlas_AdvInjMld.description>Moulds complex materials.</RimPlas_AdvInjMld.description>
+  <!-- EN: RimPlas Injection Moulder -->
+  <RimPlas_InjMldMachine.label>RimPlas Injection Moulder</RimPlas_InjMldMachine.label>
+  <!-- EN: Efficiently moulds RimPlas furniture and items from resources. -->
+  <RimPlas_InjMldMachine.description>Efficiently moulds RimPlas furniture and items from resources.</RimPlas_InjMldMachine.description>
+  <!-- EN: Mech Breaker -->
+  <RimPlas_MechBreaker.label>Mech Breaker</RimPlas_MechBreaker.label>
+  <!-- EN: Breaks mechanoids down into their respective parts and extracts mechanites. -->
+  <RimPlas_MechBreaker.description>Breaks mechanoids down into their respective parts and extracts mechanites.</RimPlas_MechBreaker.description>
+</LanguageData>

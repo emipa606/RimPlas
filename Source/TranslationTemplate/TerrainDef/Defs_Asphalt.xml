@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Asphalt -->
+  <RimPlas_AsphaltFloor.label>Asphalt</RimPlas_AsphaltFloor.label>
+  <!-- EN: Similar to concrete, this is a workhorse of surfaces but not very pretty. Asphalt is also a faster material to use than concrete utilising slightly less material. -->
+  <RimPlas_AsphaltFloor.description>Similar to concrete, this is a workhorse of surfaces but not very pretty. Asphalt is also a faster material to use than concrete utilising slightly less material.</RimPlas_AsphaltFloor.description>
+</LanguageData>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: ElectroSteel Wool -->
+  <RimPlas_ElectroSteel_Wool.label>ElectroSteel Wool</RimPlas_ElectroSteel_Wool.label>
+  <!-- EN: A thin synthetic fibre derived from Steel and Silver. -->
+  <RimPlas_ElectroSteel_Wool.description>A thin synthetic fibre derived from Steel and Silver.</RimPlas_ElectroSteel_Wool.description>
+  <!-- EN: Gold Wool -->
+  <RimPlas_Gold_Wool.label>Gold Wool</RimPlas_Gold_Wool.label>
+  <!-- EN: A thin synthetic fibre derived from Gold. -->
+  <RimPlas_Gold_Wool.description>A thin synthetic fibre derived from Gold.</RimPlas_Gold_Wool.description>
+  <!-- EN: Plasteel Wool -->
+  <RimPlas_Plasteel_Wool.label>Plasteel Wool</RimPlas_Plasteel_Wool.label>
+  <!-- EN: A synthetic fibre derived from Plasteel. -->
+  <RimPlas_Plasteel_Wool.description>A synthetic fibre derived from Plasteel.</RimPlas_Plasteel_Wool.description>
+  <!-- EN: DevilSynth -->
+  <RimPlasDevilSynth.label>DevilSynth</RimPlasDevilSynth.label>
+  <!-- EN: Synthetic version of Devilstrand cloth. An Improvement on the base material -->
+  <RimPlasDevilSynth.description>Synthetic version of Devilstrand cloth. An Improvement on the base material</RimPlasDevilSynth.description>
+  <!-- EN: RimRayon -->
+  <RimRayon.label>RimRayon</RimRayon.label>
+  <!-- EN: An early semisynthetic fibre. Made from cellulose (wood) and an organic base (chemfuel). -->
+  <RimRayon.description>An early semisynthetic fibre. Made from cellulose (wood) and an organic base (chemfuel).</RimRayon.description>
+  <!-- EN: Synthbase -->
+  <Synthbase.label>Synthbase</Synthbase.label>
+  <!-- EN: A synthetic precursor chemical. While it is useless on its own, it is used in the production of other synthetic materials. -->
+  <Synthbase.description>A synthetic precursor chemical. While it is useless on its own, it is used in the production of other synthetic materials.</Synthbase.description>
+</LanguageData>

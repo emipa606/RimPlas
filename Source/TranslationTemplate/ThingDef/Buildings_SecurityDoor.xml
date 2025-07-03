@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Neurosis Security Door -->
+  <RPSecurityDoor.label>Neurosis Security Door</RPSecurityDoor.label>
+  <!-- EN: Divides rooms. Powered operation allows people to move through the door without slowing down. This door has additional biometric sensors that can allow it to detect if a colonist is in an abnormal mental state and "intervene". -->
+  <RPSecurityDoor.description>Divides rooms. Powered operation allows people to move through the door without slowing down. This door has additional biometric sensors that can allow it to detect if a colonist is in an abnormal mental state and "intervene".</RPSecurityDoor.description>
+</LanguageData>

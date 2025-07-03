@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Make RimPlas in Bulk -->
+  <MakeBulkRimPlas.label>Make RimPlas in Bulk</MakeBulkRimPlas.label>
+  <!-- EN: Craft 100 RimPlas. -->
+  <MakeBulkRimPlas.description>Craft 100 RimPlas.</MakeBulkRimPlas.description>
+  <!-- EN: Making RimPlas. -->
+  <MakeBulkRimPlas.jobString>Making RimPlas.</MakeBulkRimPlas.jobString>
+  <!-- EN: Make RimPlas -->
+  <MakeRimPlas.label>Make RimPlas</MakeRimPlas.label>
+  <!-- EN: Craft 25 RimPlas. -->
+  <MakeRimPlas.description>Craft 25 RimPlas.</MakeRimPlas.description>
+  <!-- EN: Making RimPlas. -->
+  <MakeRimPlas.jobString>Making RimPlas.</MakeRimPlas.jobString>
+</LanguageData>

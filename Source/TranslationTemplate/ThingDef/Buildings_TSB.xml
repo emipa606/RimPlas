@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: RimThermoPlas Single Bedroll -->
+  <BedRoll_TSB.label>RimThermoPlas Single Bedroll</BedRoll_TSB.label>
+  <!-- EN: A complex bedroll utilising RimThermoPlas for additional heating. It can be rolled up for easy transport, but it is not quite as comfortable as a typical bed. Caravans can use bedrolls while traveling for better sleep. -->
+  <BedRoll_TSB.description>A complex bedroll utilising RimThermoPlas for additional heating. It can be rolled up for easy transport, but it is not quite as comfortable as a typical bed. Caravans can use bedrolls while traveling for better sleep.</BedRoll_TSB.description>
+  <!-- EN: RimThermoPlas Double Bedroll -->
+  <BedrollDouble_TSB.label>RimThermoPlas Double Bedroll</BedrollDouble_TSB.label>
+  <!-- EN: A complex double-wide bedroll utilising RimThermoPlas for additional heating. It can be rolled up for easy transport, but it is not quite as comfortable as a typical bed. Caravans can use bedrolls while traveling for better sleep. -->
+  <BedrollDouble_TSB.description>A complex double-wide bedroll utilising RimThermoPlas for additional heating. It can be rolled up for easy transport, but it is not quite as comfortable as a typical bed. Caravans can use bedrolls while traveling for better sleep.</BedrollDouble_TSB.description>
+</LanguageData>

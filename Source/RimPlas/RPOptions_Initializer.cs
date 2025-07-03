@@ -12,7 +12,7 @@ internal static class RPOptions_Initializer
         LongEventHandler.QueueLongEvent(Setup, "LibraryStartup", false, null);
     }
 
-    public static void Setup()
+    private static void Setup()
     {
         var allDefs = DefDatabase<ResearchProjectDef>.AllDefsListForReading;
         if (allDefs.Count <= 0)
@@ -34,7 +34,7 @@ internal static class RPOptions_Initializer
         }
     }
 
-    public static List<string> RPResearchList()
+    private static List<string> RPResearchList()
     {
         var list = new List<string>();
         list.AddDistinct("RimPlas");

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: RimPlas -->
+  <RimPlas.label>RimPlas</RimPlas.label>
+  <!-- EN: A synthetic plastic used in building a huge variety of structures and items. -->
+  <RimPlas.description>A synthetic plastic used in building a huge variety of structures and items.</RimPlas.description>
+  <!-- EN: RimPoly -->
+  <RimPoly.label>RimPoly</RimPoly.label>
+  <!-- EN: A synthetic polymer fibre. -->
+  <RimPoly.description>A synthetic polymer fibre.</RimPoly.description>
+  <!-- EN: Mechanites -->
+  <RPMechanites.label>Mechanites</RPMechanites.label>
+  <!-- EN: A cannister of mechanites stored under pressure. -->
+  <RPMechanites.description>A cannister of mechanites stored under pressure.</RPMechanites.description>
+</LanguageData>

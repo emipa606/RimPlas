@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Make Asphalt -->
+  <MakeAsphalt.label>Make Asphalt</MakeAsphalt.label>
+  <!-- EN: Make 50 Asphalt -->
+  <MakeAsphalt.description>Make 50 Asphalt</MakeAsphalt.description>
+  <!-- EN: Making Asphalt -->
+  <MakeAsphalt.jobString>Making Asphalt</MakeAsphalt.jobString>
+</LanguageData>

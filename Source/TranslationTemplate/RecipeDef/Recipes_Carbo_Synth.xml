@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Make Pitch -->
+  <MakeCarboPitch.label>Make Pitch</MakeCarboPitch.label>
+  <!-- EN: Make 100 Pitch -->
+  <MakeCarboPitch.description>Make 100 Pitch</MakeCarboPitch.description>
+  <!-- EN: Making Pitch -->
+  <MakeCarboPitch.jobString>Making Pitch</MakeCarboPitch.jobString>
+  <!-- EN: Make CarboPlasteel in bulk -->
+  <RCP_BulkCarboPlasteel.label>Make CarboPlasteel in bulk</RCP_BulkCarboPlasteel.label>
+  <!-- EN: Make 50 CarboPlasteel -->
+  <RCP_BulkCarboPlasteel.description>Make 50 CarboPlasteel</RCP_BulkCarboPlasteel.description>
+  <!-- EN: Making CarboPlasteel -->
+  <RCP_BulkCarboPlasteel.jobString>Making CarboPlasteel</RCP_BulkCarboPlasteel.jobString>
+  <!-- EN: Mould Graphene in bulk -->
+  <RCP_BulkGraphene.label>Mould Graphene in bulk</RCP_BulkGraphene.label>
+  <!-- EN: Mould 100 Graphene -->
+  <RCP_BulkGraphene.description>Mould 100 Graphene</RCP_BulkGraphene.description>
+  <!-- EN: Moulding Graphene -->
+  <RCP_BulkGraphene.jobString>Moulding Graphene</RCP_BulkGraphene.jobString>
+  <!-- EN: Mould Carbon Fibre -->
+  <RCP_CarboFibre.label>Mould Carbon Fibre</RCP_CarboFibre.label>
+  <!-- EN: Mould 100 Carbon Fibre -->
+  <RCP_CarboFibre.description>Mould 100 Carbon Fibre</RCP_CarboFibre.description>
+  <!-- EN: Moulding carbon fibre. -->
+  <RCP_CarboFibre.jobString>Moulding carbon fibre.</RCP_CarboFibre.jobString>
+  <!-- EN: Make CarboPlasteel -->
+  <RCP_CarboPlasteel.label>Make CarboPlasteel</RCP_CarboPlasteel.label>
+  <!-- EN: Make 25 CarboPlasteel -->
+  <RCP_CarboPlasteel.description>Make 25 CarboPlasteel</RCP_CarboPlasteel.description>
+  <!-- EN: Making CarboPlasteel -->
+  <RCP_CarboPlasteel.jobString>Making CarboPlasteel</RCP_CarboPlasteel.jobString>
+  <!-- EN: Mould Graphene -->
+  <RCP_Graphene.label>Mould Graphene</RCP_Graphene.label>
+  <!-- EN: Mould 25 Graphene -->
+  <RCP_Graphene.description>Mould 25 Graphene</RCP_Graphene.description>
+  <!-- EN: Moulding Graphene -->
+  <RCP_Graphene.jobString>Moulding Graphene</RCP_Graphene.jobString>
+  <!-- EN: Mould CarboSynth -->
+  <RimPlasMakeCarboSynth.label>Mould CarboSynth</RimPlasMakeCarboSynth.label>
+  <!-- EN: Mould 25 CarboSynth -->
+  <RimPlasMakeCarboSynth.description>Mould 25 CarboSynth</RimPlasMakeCarboSynth.description>
+  <!-- EN: Moulding CarboSynth -->
+  <RimPlasMakeCarboSynth.jobString>Moulding CarboSynth</RimPlasMakeCarboSynth.jobString>
+</LanguageData>

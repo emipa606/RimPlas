@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Carbon Fibre -->
+  <CarboFibre.label>Carbon Fibre</CarboFibre.label>
+  <!-- EN: A synthetic carbon reinforced polymer material used in building a variety of structures and items. Good resistance to heat. -->
+  <CarboFibre.description>A synthetic carbon reinforced polymer material used in building a variety of structures and items. Good resistance to heat.</CarboFibre.description>
+  <!-- EN: Pitch -->
+  <CarboPitch.label>Pitch</CarboPitch.label>
+  <!-- EN: A synthetic precursor chemical. While it is useless on its own, it is used in the production of other carbon based synthetic materials. -->
+  <CarboPitch.description>A synthetic precursor chemical. While it is useless on its own, it is used in the production of other carbon based synthetic materials.</CarboPitch.description>
+  <!-- EN: CarboPlasteel -->
+  <CarboPlasteel.label>CarboPlasteel</CarboPlasteel.label>
+  <!-- EN: An extremely strong carbon/plasteel laminate material used in building a variety of structures and items. -->
+  <CarboPlasteel.description>An extremely strong carbon/plasteel laminate material used in building a variety of structures and items.</CarboPlasteel.description>
+  <!-- EN: CarboSynth -->
+  <CarboSynth.label>CarboSynth</CarboSynth.label>
+  <!-- EN: Synthetic Carbon fibre based cloth. It has a good tolerance for heat. -->
+  <CarboSynth.description>Synthetic Carbon fibre based cloth. It has a good tolerance for heat.</CarboSynth.description>
+  <!-- EN: Graphene -->
+  <RimPlasGraphene.label>Graphene</RimPlasGraphene.label>
+  <!-- EN: An extremely strong synthetic carbon based material used in building a variety of structures and items. It also has a good tolerance to heat and useful electrical properties. The material is more effective against compression or blunt related damage but still effective otherwise. -->
+  <RimPlasGraphene.description>An extremely strong synthetic carbon based material used in building a variety of structures and items. It also has a good tolerance to heat and useful electrical properties. The material is more effective against compression or blunt related damage but still effective otherwise.</RimPlasGraphene.description>
+</LanguageData>

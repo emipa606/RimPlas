@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Mould RimThermoPlas Foam in bulk -->
+  <RCP_Bulk_RimThermoPlas_Foam.label>Mould RimThermoPlas Foam in bulk</RCP_Bulk_RimThermoPlas_Foam.label>
+  <!-- EN: Mould 20 RimThermoPlas Foam. -->
+  <RCP_Bulk_RimThermoPlas_Foam.description>Mould 20 RimThermoPlas Foam.</RCP_Bulk_RimThermoPlas_Foam.description>
+  <!-- EN: Moulding a RimThermoPlas Item. -->
+  <RCP_Bulk_RimThermoPlas_Foam.jobString>Moulding a RimThermoPlas Item.</RCP_Bulk_RimThermoPlas_Foam.jobString>
+  <!-- EN: Mould RimThermoPlas Foam -->
+  <RCP_RimThermoPlas_Foam.label>Mould RimThermoPlas Foam</RCP_RimThermoPlas_Foam.label>
+  <!-- EN: Mould 5 RimThermoPlas Foam. -->
+  <RCP_RimThermoPlas_Foam.description>Mould 5 RimThermoPlas Foam.</RCP_RimThermoPlas_Foam.description>
+  <!-- EN: Moulding a RimThermoPlas Item. -->
+  <RCP_RimThermoPlas_Foam.jobString>Moulding a RimThermoPlas Item.</RCP_RimThermoPlas_Foam.jobString>
+</LanguageData>

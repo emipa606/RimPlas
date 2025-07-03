@@ -14,7 +14,7 @@ public class Building_RPGrapheneBatterySmall : Building
 
     private const float ExplodeChancePerDamage = 0.05f;
 
-    private static readonly Vector2 BarSize = new Vector2(0.65f, 0.2f);
+    private static readonly Vector2 BarSize = new(0.65f, 0.2f);
 
     private static readonly Material BatteryBarFilledMat =
         SolidColorMaterials.SimpleSolidColorMaterial(new Color(0.9f, 0.85f, 0.2f));
@@ -53,7 +53,7 @@ public class Building_RPGrapheneBatterySmall : Building
         }
     }
 
-    public override void Tick()
+    protected override void Tick()
     {
         base.Tick();
         if (ticksToExplode <= 0)
@@ -63,7 +63,7 @@ public class Building_RPGrapheneBatterySmall : Building
 
         if (wickSustainer == null)
         {
-            StartWickSustainer();
+            startWickSustainer();
         }
         else
         {
@@ -79,23 +79,24 @@ public class Building_RPGrapheneBatterySmall : Building
         var randomCell = this.OccupiedRect().RandomCell;
         var radius = Rand.Range(0.5f, 1f) * 3f;
         GenExplosion.DoExplosion(randomCell, Map, radius, DamageDefOf.Flame, null);
-        GetComp<CompPowerBattery>().DrawPower(400f);
+        GetComp<CompPowerBattery>().DrawPower(EnergyToLoseWhenExplode);
     }
 
     public override void PostApplyDamage(DamageInfo dinfo, float totalDamageDealt)
     {
         base.PostApplyDamage(dinfo, totalDamageDealt);
-        if (Destroyed || ticksToExplode != 0 || dinfo.Def != DamageDefOf.Flame || !(Rand.Value < 0.05f) ||
-            !(GetComp<CompPowerBattery>().StoredEnergy > 500f))
+        if (Destroyed || ticksToExplode != 0 || dinfo.Def != DamageDefOf.Flame ||
+            !(Rand.Value < ExplodeChancePerDamage) ||
+            !(GetComp<CompPowerBattery>().StoredEnergy > MinEnergyToExplode))
         {
             return;
         }
 
         ticksToExplode = Rand.Range(70, 150);
-        StartWickSustainer();
+        startWickSustainer();
     }
 
-    private void StartWickSustainer()
+    private void startWickSustainer()
     {
         var info = SoundInfo.InMap(this, MaintenanceType.PerTick);
         wickSustainer = SoundDefOf.HissSmall.TrySpawnSustainer(info);

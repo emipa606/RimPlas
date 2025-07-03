@@ -4,12 +4,12 @@ using Verse;
 
 namespace RimPlas;
 
-[HarmonyPatch(typeof(PlantUtility), "GrowthSeasonNow")]
-public class GrowthSeasonNow_Patch
+[HarmonyPatch(typeof(PlantUtility), nameof(PlantUtility.GrowthSeasonNow), typeof(IntVec3), typeof(Map),
+    typeof(ThingDef))]
+public class PlantUtility_GrowthSeasonNow
 {
-    [HarmonyPrefix]
     [HarmonyPriority(800)]
-    public static bool PreFix(ref bool __result, IntVec3 c, Map map, bool forSowing = false)
+    public static bool Prefix(ref bool __result, IntVec3 c, Map map)
     {
         if (map == null)
         {

@@ -17,38 +17,38 @@ public class PelShieldApparel : Apparel
 
     public const int JitterDurationTicks = 8;
 
-    public static readonly Material BubbleMat =
+    private static readonly Material BubbleMat =
         MaterialPool.MatFrom("Other/ShieldBubble", ShaderDatabase.Transparent);
 
-    public readonly float ApparelScorePerEnergyMax = 0.25f;
+    private readonly float ApparelScorePerEnergyMax = 0.25f;
 
-    public readonly float EnergyLossPerDamage = 0.03f;
+    private readonly float EnergyLossPerDamage = 0.03f;
 
-    public readonly float EnergyOnReset = 0.2f;
+    private readonly float EnergyOnReset = 0.2f;
 
     private readonly SoundDef EnergyShield_Broken = SoundDef.Named("EnergyShield_Broken");
 
-    public readonly int KeepDisplayingTicks = 1000;
+    private readonly int KeepDisplayingTicks = 1000;
 
-    public readonly int StartingTicksToReset = 2500;
+    private readonly int StartingTicksToReset = 2500;
 
     public float energy;
 
-    public Vector3 impactAngleVect;
+    private Vector3 impactAngleVect;
 
-    public int lastAbsorbDamageTick = -9999;
+    private int lastAbsorbDamageTick = -9999;
 
-    public int lastKeepDisplayTick = -9999;
+    private int lastKeepDisplayTick = -9999;
 
-    public int ticksToReset = -1;
+    private int ticksToReset = -1;
 
-    public float EnergyMax => this.GetStatValue(StatDefOf.EnergyShieldEnergyMax);
+    private float EnergyMax => this.GetStatValue(StatDefOf.EnergyShieldEnergyMax);
 
-    public float EnergyGainPerTick => this.GetStatValue(StatDefOf.EnergyShieldRechargeRate) / 60f;
+    private float EnergyGainPerTick => this.GetStatValue(StatDefOf.EnergyShieldRechargeRate) / 60f;
 
     public float Energy => energy;
 
-    public ShieldState ShieldState => ticksToReset > 0 ? ShieldState.Resetting : ShieldState.Active;
+    private ShieldState ShieldState => ticksToReset > 0 ? ShieldState.Resetting : ShieldState.Active;
 
     private bool ShouldDisplay
     {
@@ -89,7 +89,7 @@ public class PelShieldApparel : Apparel
         return EnergyMax * ApparelScorePerEnergyMax;
     }
 
-    public override void Tick()
+    protected override void Tick()
     {
         base.Tick();
         var wearer = Wearer;
@@ -97,20 +97,30 @@ public class PelShieldApparel : Apparel
         {
             energy = 0f;
         }
-        else if (ShieldState == ShieldState.Resetting)
+        else
         {
-            ticksToReset--;
-            if (ticksToReset <= 0)
+            switch (ShieldState)
             {
-                Reset();
-            }
-        }
-        else if (ShieldState == ShieldState.Active)
-        {
-            energy += EnergyGainPerTick;
-            if (energy > EnergyMax)
-            {
-                energy = EnergyMax;
+                case ShieldState.Resetting:
+                {
+                    ticksToReset--;
+                    if (ticksToReset <= 0)
+                    {
+                        reset();
+                    }
+
+                    break;
+                }
+                case ShieldState.Active:
+                {
+                    energy += EnergyGainPerTick;
+                    if (energy > EnergyMax)
+                    {
+                        energy = EnergyMax;
+                    }
+
+                    break;
+                }
             }
         }
 
@@ -119,14 +129,14 @@ public class PelShieldApparel : Apparel
             return;
         }
 
-        var regenEnergy = 0.1f;
+        const float regenEnergy = 0.1f;
         if (energy > regenEnergy && !wearer.Drafted && isAutoRepair(this))
         {
             DoAutoRepair(this, regenEnergy);
         }
     }
 
-    public void DoAutoRepair(Apparel apparel, float regenEnergy)
+    private static void DoAutoRepair(Apparel apparel, float regenEnergy)
     {
         if (!(((PelShieldApparel)apparel).energy > regenEnergy))
         {
@@ -154,7 +164,7 @@ public class PelShieldApparel : Apparel
         ((PelShieldApparel)apparel).energy -= regenEnergy;
     }
 
-    public bool isAutoRepair(Apparel apparel)
+    private static bool isAutoRepair(Apparel apparel)
     {
         if (apparel == null || !apparel.def.useHitPoints)
         {
@@ -201,7 +211,7 @@ public class PelShieldApparel : Apparel
         if (dinfo.Def == DamageDefOf.EMP)
         {
             energy = 0f;
-            Break();
+            shieldBroken();
             return false;
         }
 
@@ -209,7 +219,7 @@ public class PelShieldApparel : Apparel
         if (haywire != null && dinfo.Def == haywire)
         {
             energy = 0f;
-            Break();
+            shieldBroken();
             return false;
         }
 
@@ -221,22 +231,22 @@ public class PelShieldApparel : Apparel
         energy -= dinfo.Amount * EnergyLossPerDamage;
         if (energy < 0f)
         {
-            Break();
+            shieldBroken();
         }
         else
         {
-            AbsorbedDamage(dinfo);
+            absorbedDamage(dinfo);
         }
 
         return true;
     }
 
-    public void KeepDisplaying()
+    private void keepDisplaying()
     {
         lastKeepDisplayTick = Find.TickManager.TicksGame;
     }
 
-    public void AbsorbedDamage(DamageInfo dinfo)
+    private void absorbedDamage(DamageInfo dinfo)
     {
         var wearer = Wearer;
         SoundDefOf.EnergyShield_AbsorbDamage.PlayOneShot(new TargetInfo(wearer.Position, wearer.Map));
@@ -251,10 +261,10 @@ public class PelShieldApparel : Apparel
         }
 
         lastAbsorbDamageTick = Find.TickManager.TicksGame;
-        KeepDisplaying();
+        keepDisplaying();
     }
 
-    public void Break()
+    private void shieldBroken()
     {
         var wearer = Wearer;
         EnergyShield_Broken.PlayOneShot(new TargetInfo(wearer.Position, wearer.Map));
@@ -270,7 +280,7 @@ public class PelShieldApparel : Apparel
         ticksToReset = StartingTicksToReset;
     }
 
-    public void Reset()
+    private void reset()
     {
         var wearer = Wearer;
         if (wearer.Spawned)

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: RimPlas Multianalyzer part -->
+  <RimPlas_MAPart.label>RimPlas Multianalyzer part</RimPlas_MAPart.label>
+  <!-- EN: This is a housing part used to build a RimPlas version of the multianalyzer. -->
+  <RimPlas_MAPart.description>This is a housing part used to build a RimPlas version of the multianalyzer.</RimPlas_MAPart.description>
+  <!-- EN: Unfinished RimPlas Multianalyzer -->
+  <RimPlas_UnfinishedMA.label>Unfinished RimPlas Multianalyzer</RimPlas_UnfinishedMA.label>
+</LanguageData>

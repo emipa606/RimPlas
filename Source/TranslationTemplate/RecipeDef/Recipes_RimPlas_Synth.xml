@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Make RimRayon -->
+  <MakeRimRayon.label>Make RimRayon</MakeRimRayon.label>
+  <!-- EN: Make RimRayon. -->
+  <MakeRimRayon.description>Make RimRayon.</MakeRimRayon.description>
+  <!-- EN: Making RimRayon. -->
+  <MakeRimRayon.jobString>Making RimRayon.</MakeRimRayon.jobString>
+  <!-- EN: Make Synthbase -->
+  <MakeSynthbase.label>Make Synthbase</MakeSynthbase.label>
+  <!-- EN: Make synthbase. -->
+  <MakeSynthbase.description>Make synthbase.</MakeSynthbase.description>
+  <!-- EN: Making Synthbase. -->
+  <MakeSynthbase.jobString>Making Synthbase.</MakeSynthbase.jobString>
+  <!-- EN: Make DevilSynth in bulk -->
+  <RimPlasBulkDevilSynth.label>Make DevilSynth in bulk</RimPlasBulkDevilSynth.label>
+  <!-- EN: Make 100 DevilSynth. -->
+  <RimPlasBulkDevilSynth.description>Make 100 DevilSynth.</RimPlasBulkDevilSynth.description>
+  <!-- EN: Making DevilSynth. -->
+  <RimPlasBulkDevilSynth.jobString>Making DevilSynth.</RimPlasBulkDevilSynth.jobString>
+  <!-- EN: Make ElectroSteel Wool in bulk -->
+  <RimPlasBulkElectroSteelWool.label>Make ElectroSteel Wool in bulk</RimPlasBulkElectroSteelWool.label>
+  <!-- EN: Make 100 ElectroSteel Wool. -->
+  <RimPlasBulkElectroSteelWool.description>Make 100 ElectroSteel Wool.</RimPlasBulkElectroSteelWool.description>
+  <!-- EN: Making ElectroSteel Wool. -->
+  <RimPlasBulkElectroSteelWool.jobString>Making ElectroSteel Wool.</RimPlasBulkElectroSteelWool.jobString>
+  <!-- EN: Make Gold Wool in bulk -->
+  <RimPlasBulkGoldWool.label>Make Gold Wool in bulk</RimPlasBulkGoldWool.label>
+  <!-- EN: Make 100 Gold Wool. -->
+  <RimPlasBulkGoldWool.description>Make 100 Gold Wool.</RimPlasBulkGoldWool.description>
+  <!-- EN: Making Gold Wool. -->
+  <RimPlasBulkGoldWool.jobString>Making Gold Wool.</RimPlasBulkGoldWool.jobString>
+  <!-- EN: Make Plasteel in bulk -->
+  <RimPlasBulkPlasteel.label>Make Plasteel in bulk</RimPlasBulkPlasteel.label>
+  <!-- EN: Make 100 Plasteel. -->
+  <RimPlasBulkPlasteel.description>Make 100 Plasteel.</RimPlasBulkPlasteel.description>
+  <!-- EN: Making Plasteel. -->
+  <RimPlasBulkPlasteel.jobString>Making Plasteel.</RimPlasBulkPlasteel.jobString>
+  <!-- EN: Make Plasteel Wool in bulk -->
+  <RimPlasBulkPlasteelWool.label>Make Plasteel Wool in bulk</RimPlasBulkPlasteelWool.label>
+  <!-- EN: Make 100 Plasteel Wool. -->
+  <RimPlasBulkPlasteelWool.description>Make 100 Plasteel Wool.</RimPlasBulkPlasteelWool.description>
+  <!-- EN: Making Plasteel Wool. -->
+  <RimPlasBulkPlasteelWool.jobString>Making Plasteel Wool.</RimPlasBulkPlasteelWool.jobString>
+  <!-- EN: Make Synthread in bulk -->
+  <RimPlasBulkSynthread.label>Make Synthread in bulk</RimPlasBulkSynthread.label>
+  <!-- EN: Make 100 Synthread. -->
+  <RimPlasBulkSynthread.description>Make 100 Synthread.</RimPlasBulkSynthread.description>
+  <!-- EN: Making Synthread. -->
+  <RimPlasBulkSynthread.jobString>Making Synthread.</RimPlasBulkSynthread.jobString>
+  <!-- EN: Make DevilSynth -->
+  <RimPlasMakeDevilSynth.label>Make DevilSynth</RimPlasMakeDevilSynth.label>
+  <!-- EN: Make 25 DevilSynth. -->
+  <RimPlasMakeDevilSynth.description>Make 25 DevilSynth.</RimPlasMakeDevilSynth.description>
+  <!-- EN: Making DevilSynth. -->
+  <RimPlasMakeDevilSynth.jobString>Making DevilSynth.</RimPlasMakeDevilSynth.jobString>
+  <!-- EN: Make ElectroSteel Wool -->
+  <RimPlasMakeElectroSteelWool.label>Make ElectroSteel Wool</RimPlasMakeElectroSteelWool.label>
+  <!-- EN: Make 25 ElectroSteel Wool. -->
+  <RimPlasMakeElectroSteelWool.description>Make 25 ElectroSteel Wool.</RimPlasMakeElectroSteelWool.description>
+  <!-- EN: Making ElectroSteel Wool. -->
+  <RimPlasMakeElectroSteelWool.jobString>Making ElectroSteel Wool.</RimPlasMakeElectroSteelWool.jobString>
+  <!-- EN: Make Gold Wool -->
+  <RimPlasMakeGoldWool.label>Make Gold Wool</RimPlasMakeGoldWool.label>
+  <!-- EN: Make 25 Gold Wool. -->
+  <RimPlasMakeGoldWool.description>Make 25 Gold Wool.</RimPlasMakeGoldWool.description>
+  <!-- EN: Making Gold Wool. -->
+  <RimPlasMakeGoldWool.jobString>Making Gold Wool.</RimPlasMakeGoldWool.jobString>
+  <!-- EN: Make Hyperweave -->
+  <RimPlasMakeHyperweave.label>Make Hyperweave</RimPlasMakeHyperweave.label>
+  <!-- EN: Make 25 Hyperweave. -->
+  <RimPlasMakeHyperweave.description>Make 25 Hyperweave.</RimPlasMakeHyperweave.description>
+  <!-- EN: Making Hyperweave. -->
+  <RimPlasMakeHyperweave.jobString>Making Hyperweave.</RimPlasMakeHyperweave.jobString>
+  <!-- EN: Make Plasteel -->
+  <RimPlasMakePlasteel.label>Make Plasteel</RimPlasMakePlasteel.label>
+  <!-- EN: Make 25 Plasteel. -->
+  <RimPlasMakePlasteel.description>Make 25 Plasteel.</RimPlasMakePlasteel.description>
+  <!-- EN: Making Plasteel. -->
+  <RimPlasMakePlasteel.jobString>Making Plasteel.</RimPlasMakePlasteel.jobString>
+  <!-- EN: Make Plasteel Wool -->
+  <RimPlasMakePlasteelWool.label>Make Plasteel Wool</RimPlasMakePlasteelWool.label>
+  <!-- EN: Make 25 Plasteel Wool. -->
+  <RimPlasMakePlasteelWool.description>Make 25 Plasteel Wool.</RimPlasMakePlasteelWool.description>
+  <!-- EN: Making Plasteel Wool. -->
+  <RimPlasMakePlasteelWool.jobString>Making Plasteel Wool.</RimPlasMakePlasteelWool.jobString>
+  <!-- EN: Make Synthread -->
+  <RimPlasMakeSynthread.label>Make Synthread</RimPlasMakeSynthread.label>
+  <!-- EN: Make 25 Synthread. -->
+  <RimPlasMakeSynthread.description>Make 25 Synthread.</RimPlasMakeSynthread.description>
+  <!-- EN: Making Synthread. -->
+  <RimPlasMakeSynthread.jobString>Making Synthread.</RimPlasMakeSynthread.jobString>
+</LanguageData>

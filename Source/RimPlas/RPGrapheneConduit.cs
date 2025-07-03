@@ -6,7 +6,7 @@ public class RPGrapheneConduit : Building
 {
     private static readonly ThingDef buriedDef = ThingDef.Named("RPGraphenePowerConduit_Buried");
 
-    public bool buried;
+    private bool buried;
 
     private Graphic buriedGraphic;
 

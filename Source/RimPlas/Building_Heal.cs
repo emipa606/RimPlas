@@ -10,14 +10,14 @@ public class Building_Heal : Building
 {
     public CompBuildHeal HealComp => GetComp<CompBuildHeal>();
 
-    public int GetHashOffset(Thing t)
+    private int GetHashOffset(Thing t)
     {
         var text = t.GetHashCode().ToString();
-        return text[text.Length - 1];
+        return text[^1];
     }
 
 
-    public override void Tick()
+    protected override void Tick()
     {
         base.Tick();
         var offset = GetHashOffset(this);
@@ -71,14 +71,14 @@ public class Building_Heal : Building
         }
     }
 
-    private void ResetRepairers(Building Wall)
+    private static void ResetRepairers(Building wall)
     {
-        if (Wall.Map == null)
+        if (wall.Map == null)
         {
             return;
         }
 
-        var map = Wall.Map;
+        var map = wall.Map;
         List<Pawn> list;
         if (map == null)
         {
@@ -98,28 +98,28 @@ public class Building_Heal : Building
             }
         }
 
-        var PawnList = list;
-        if (PawnList is not { Count: > 0 })
+        var pawnList = list;
+        if (pawnList is not { Count: > 0 })
         {
             return;
         }
 
-        var Repairer = new List<Pawn>();
-        foreach (var element in PawnList)
+        var repairer = new List<Pawn>();
+        foreach (var element in pawnList)
         {
             var curjob = element?.CurJob;
-            if (curjob != null && curjob.def.defName == "Repair" && curjob.targetA.Thing == Wall)
+            if (curjob != null && curjob.def.defName == "Repair" && curjob.targetA.Thing == wall)
             {
-                Repairer.AddDistinct(element);
+                repairer.AddDistinct(element);
             }
         }
 
-        if (Repairer.Count <= 0)
+        if (repairer.Count <= 0)
         {
             return;
         }
 
-        foreach (var pawn in Repairer)
+        foreach (var pawn in repairer)
         {
             if (pawn?.CurJob == null)
             {

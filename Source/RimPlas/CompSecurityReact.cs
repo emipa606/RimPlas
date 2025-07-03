@@ -6,7 +6,7 @@ namespace RimPlas;
 
 public class CompSecurityReact : ThingComp
 {
-    public CompProperties_SecurityReact Props => (CompProperties_SecurityReact)props;
+    private CompProperties_SecurityReact Props => (CompProperties_SecurityReact)props;
 
     public override void CompTick()
     {
@@ -28,7 +28,7 @@ public class CompSecurityReact : ThingComp
             Props.SecuritySeverity);
     }
 
-    public static void DoStunner(ThingWithComps securityThing, float radius, Thing target, string SecHed,
+    private static void DoStunner(ThingWithComps securityThing, float radius, Thing target, string SecHed,
         float SecSev)
     {
         HediffDef secHediffDef;
@@ -56,7 +56,7 @@ public class CompSecurityReact : ThingComp
         Globals.DoSecSpecialEffects(securityThing, radius);
     }
 
-    public static Thing MentalDetect(ThingWithComps securityThing, float radius)
+    private static Thing MentalDetect(ThingWithComps securityThing, float radius)
     {
         var DetectThings = GenRadial
             .RadialDistinctThingsAround(securityThing.Position, securityThing.Map, radius, true).ToList();
@@ -88,7 +88,7 @@ public class CompSecurityReact : ThingComp
         return null;
     }
 
-    public static bool IsDisabled(ThingWithComps checkThing)
+    private static bool IsDisabled(ThingWithComps checkThing)
     {
         if (checkThing.IsBrokenDown())
         {

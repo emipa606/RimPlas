@@ -1,0 +1,1086 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- Graphene conduit -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>RPGraphenePowerConduit</defName>
+    <label>Graphene conduit</label>
+    <description>A graphene cable for moving power around. Can be placed under walls and other buildings. Graphene cables are much more robust than regular power conduits.</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/Building/Linked/RPGraphenePowerConduit_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <linkType>Transmitter</linkType>
+      <linkFlags>
+        <li>PowerConduit</li>
+      </linkFlags>
+      <damageData>
+        <rect>(0,0.35,1,0.3)</rect>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Linked/RPGraphenePowerConduit_MenuIcon</uiIconPath>
+    <uiIconScale>0.7</uiIconScale>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <isInert>true</isInert>
+      <isEdifice>false</isEdifice>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/RPGraphenePowerConduit_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+    </building>
+    <altitudeLayer>Conduits</altitudeLayer>
+    <passability>Standable</passability>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>40</WorkToBuild>
+      <Flammability>0.0</Flammability>
+    </statBases>
+    <drawStyleCategory>Conduits</drawStyleCategory>
+    <costList>
+      <RimPlasGraphene>1</RimPlasGraphene>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTransmitter</compClass>
+        <transmitsPower>true</transmitsPower>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_Conduit</li>
+    </placeWorkers>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <isAutoAttackableMapObject>false</isAutoAttackableMapObject>
+    <designationCategory>Power</designationCategory>
+    <constructEffect>ConstructMetal</constructEffect>
+    <clearBuildingArea>false</clearBuildingArea>
+    <designationHotKey>Misc1</designationHotKey>
+    <researchPrerequisites>
+      <li>Electricity</li>
+      <li>RimPlas_Graphene</li>
+    </researchPrerequisites>
+  </ThingDef>
+  <!-- Underground Variant -->
+  <ThingDef ParentName="BuildingBase" Name="RPGrapheneUndConduit">
+    <defName>RPUndGrapheneConduit</defName>
+    <label>Underground Graphene conduit</label>
+    <description>A graphene cable for moving power around. Can be placed under walls and other buildings. Graphene cables are much more robust than regular power conduits and this type can be buried under the surface.</description>
+    <thingClass>RimPlas.RPGrapheneConduit</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/Building/Linked/RPGraphenePowerConduit_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <linkType>Transmitter</linkType>
+      <linkFlags>
+        <li>PowerConduit</li>
+      </linkFlags>
+      <damageData>
+        <rect>(0,0.35,1,0.3)</rect>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Linked/RPGraphenePowerConduit_MenuIcon</uiIconPath>
+    <uiIconScale>0.7</uiIconScale>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <isInert>true</isInert>
+      <isEdifice>false</isEdifice>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/RPGraphenePowerConduit_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+    </building>
+    <altitudeLayer>Conduits</altitudeLayer>
+    <passability>Standable</passability>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <statBases>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>40</WorkToBuild>
+      <Flammability>0.0</Flammability>
+    </statBases>
+    <drawStyleCategory>Conduits</drawStyleCategory>
+    <costList>
+      <RimPlasGraphene>1</RimPlasGraphene>
+      <RimPlas>1</RimPlas>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTransmitter</compClass>
+        <transmitsPower>true</transmitsPower>
+      </li>
+    </comps>
+    <placeWorkers>
+      <li>PlaceWorker_Conduit</li>
+    </placeWorkers>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <soundImpactDefault>BulletImpact_Metal</soundImpactDefault>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <isAutoAttackableMapObject>false</isAutoAttackableMapObject>
+    <designationCategory>Power</designationCategory>
+    <constructEffect>ConstructDirt</constructEffect>
+    <clearBuildingArea>false</clearBuildingArea>
+    <designationHotKey>Misc1</designationHotKey>
+    <researchPrerequisites>
+      <li>Electricity</li>
+      <li>RimPlas_Graphene</li>
+    </researchPrerequisites>
+  </ThingDef>
+  <ThingDef ParentName="RPGrapheneUndConduit" Name="RPGrapheneConduit_Buried">
+    <defName>RPGraphenePowerConduit_Buried</defName>
+    <category>Attachment</category>
+    <graphicData>
+      <texPath>Things/Building/Buried/RPGrapheneConduit_Buried</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+    </graphicData>
+    <destroyable>false</destroyable>
+    <useHitPoints>false</useHitPoints>
+  </ThingDef>
+  <!-- Graphene Battery -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>RPGrapheneBattery</defName>
+    <label>Graphene battery</label>
+    <description>Stores electricity for later use. Charged batteries explode when exposed to rain or fire. This Graphene battery is more efficient, can store more and is more robust.</description>
+    <thingClass>Building_Battery</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Power/RPGrapheneBattery</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,3)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>70</pathCost>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.40</fillPercent>
+    <tickerType>Normal</tickerType>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <thingCategories>
+      <li>BuildingsPower</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>400</MaxHitPoints>
+      <WorkToBuild>850</WorkToBuild>
+      <Mass>15</Mass>
+      <Flammability>0.35</Flammability>
+      <Beauty>-10</Beauty>
+    </statBases>
+    <size>(1,2)</size>
+    <costList>
+      <Steel>20</Steel>
+      <RimPlasGraphene>50</RimPlasGraphene>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Battery">
+        <storedEnergyMax>1500</storedEnergyMax>
+        <efficiency>0.75</efficiency>
+        <shortCircuitInRain>true</shortCircuitInRain>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+    </comps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>Power</designationCategory>
+    <staticSunShadowHeight>0.2</staticSunShadowHeight>
+    <constructEffect>ConstructMetal</constructEffect>
+    <designationHotKey>Misc4</designationHotKey>
+    <canOverlapZones>false</canOverlapZones>
+    <researchPrerequisites>
+      <li>Batteries</li>
+      <li>RimPlas_Graphene</li>
+    </researchPrerequisites>
+  </ThingDef>
+  <!-- Small Graphene Battery -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>RPSmallGrapheneBattery</defName>
+    <label>Small Graphene battery</label>
+    <description>Stores electricity for later use. This smaller Graphene battery is more efficient than regular batteries and can be used out in the elements. It can store half the capacity of a normal sized Graphene Battery</description>
+    <thingClass>RimPlas.Building_RPGrapheneBatterySmall</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Power/RPSmallGrapheneBattery</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>70</pathCost>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.40</fillPercent>
+    <tickerType>Normal</tickerType>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <thingCategories>
+      <li>BuildingsPower</li>
+    </thingCategories>
+    <statBases>
+      <MaxHitPoints>200</MaxHitPoints>
+      <WorkToBuild>450</WorkToBuild>
+      <Mass>7.5</Mass>
+      <Flammability>0.35</Flammability>
+      <Beauty>-5</Beauty>
+    </statBases>
+    <size>(1,1)</size>
+    <costList>
+      <Steel>10</Steel>
+      <RimPlasGraphene>25</RimPlasGraphene>
+      <RimPlas>5</RimPlas>
+      <ComponentIndustrial>2</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Battery">
+        <storedEnergyMax>750</storedEnergyMax>
+        <efficiency>0.75</efficiency>
+        <shortCircuitInRain>false</shortCircuitInRain>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+    </comps>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Power</designationCategory>
+    <staticSunShadowHeight>0.2</staticSunShadowHeight>
+    <constructEffect>ConstructMetal</constructEffect>
+    <designationHotKey>Misc4</designationHotKey>
+    <canOverlapZones>false</canOverlapZones>
+    <researchPrerequisites>
+      <li>Batteries</li>
+      <li>RimPlas_Graphene</li>
+    </researchPrerequisites>
+  </ThingDef>
+  <!-- Solar Generators -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>RPGrapheneSolarGenerator</defName>
+    <label>Graphene Solar generator</label>
+    <description>Produces electricity from sunlight. Does not work in the dark or under artificial light. More robust and produces slightly more power than a regular generator.</description>
+    <thingClass>Building</thingClass>
+    <!-- <minifiedDef>MinifiedThing</minifiedDef> -->
+    <graphicData>
+      <texPath>Things/Building/Power/RPGrapheneSolarCollector</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(4,4)</drawSize>
+      <shadowData>
+        <volume>(3.5,0.75,3.4)</volume>
+        <offset>(0,0,0)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0,0.6,4,2.8)</rect>
+      </damageData>
+    </graphicData>
+    <castEdgeShadows>true</castEdgeShadows>
+    <rotatable>false</rotatable>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <pathCost>70</pathCost>
+    <fillPercent>0.5</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <!-- <Mass>10.0</Mass> -->
+      <MaxHitPoints>750</MaxHitPoints>
+      <WorkToBuild>3000</WorkToBuild>
+      <Flammability>0.25</Flammability>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <size>(4,4)</size>
+    <costList>
+      <Steel>20</Steel>
+      <RimPlasGraphene>100</RimPlasGraphene>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>RimPlas.CompPowerPlantSolarGraphene</compClass>
+        <basePowerConsumption>-1</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+    </comps>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <designationCategory>Power</designationCategory>
+    <designationHotKey>Misc5</designationHotKey>
+    <constructEffect>ConstructMetal</constructEffect>
+    <researchPrerequisites>
+      <li>SolarPanels</li>
+      <li>RimPlas_Graphene</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>7</constructionSkillPrerequisite>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase">
+    <defName>RPSmallGrapheneSolarGenerator</defName>
+    <label>Graphene Small Solar generator</label>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <description>A smaller variant of the normal Graphene solar generator, producing less power by equivalence but requiring less resources and space.</description>
+    <thingClass>Building</thingClass>
+    <thingCategories>
+      <li>BuildingsPower</li>
+    </thingCategories>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <graphicData>
+      <texPath>Things/Building/Power/RPGrapheneSolarCollector</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(2,2)</drawSize>
+      <shadowData>
+        <volume>(1.75,0.37,1.7)</volume>
+        <offset>(0,0,0)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0,0.6,2,1.4)</rect>
+      </damageData>
+    </graphicData>
+    <castEdgeShadows>true</castEdgeShadows>
+    <rotatable>false</rotatable>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <pathCost>70</pathCost>
+    <fillPercent>0.5</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <Mass>35.0</Mass>
+      <MaxHitPoints>350</MaxHitPoints>
+      <WorkToBuild>1500</WorkToBuild>
+      <Flammability>0.25</Flammability>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <size>(2,2)</size>
+    <costList>
+      <Steel>10</Steel>
+      <RimPlasGraphene>25</RimPlasGraphene>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>RimPlas.CompPowerPlantSmallSolarGraphene</compClass>
+        <basePowerConsumption>-1</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+    </comps>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Power</designationCategory>
+    <designationHotKey>Misc5</designationHotKey>
+    <constructEffect>ConstructMetal</constructEffect>
+    <researchPrerequisites>
+      <li>SolarPanels</li>
+      <li>RimPlas_Graphene</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>7</constructionSkillPrerequisite>
+  </ThingDef>
+  <!-- Portable Power unit -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>RPGraphenePortPower</defName>
+    <label>Graphene Portable Power Unit</label>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Power/RPGraphenePortPower</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <shadowData>
+        <volume>(0.25,0.4,0.7)</volume>
+        <offset>(0,0,-0.1)</offset>
+      </shadowData>
+    </graphicData>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsPower</li>
+    </thingCategories>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <pathCost>40</pathCost>
+    <blockWind>false</blockWind>
+    <rotatable>false</rotatable>
+    <fillPercent>0.4</fillPercent>
+    <statBases>
+      <WorkToBuild>2500</WorkToBuild>
+      <MaxHitPoints>150</MaxHitPoints>
+      <Mass>1.5</Mass>
+      <Flammability>0.5</Flammability>
+      <Beauty>1</Beauty>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <description>A Graphene portable power generator.</description>
+    <size>(1,1)</size>
+    <selectable>true</selectable>
+    <costList>
+      <RimPlasGraphene>25</RimPlasGraphene>
+      <RimPlas>25</RimPlas>
+      <Uranium>75</Uranium>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerPlant</compClass>
+        <basePowerConsumption>-333</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>2</glowRadius>
+        <glowColor>(255,150,100,0)</glowColor>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+    </comps>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <designationCategory>Power</designationCategory>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <constructEffect>ConstructMetal</constructEffect>
+    <researchPrerequisites>
+      <li>RimPlas_Graphene</li>
+    </researchPrerequisites>
+  </ThingDef>
+  <!-- Wall Light / LEDs -->
+  <!-- to do later? -->
+  <!-- Grow Bin -->
+  <ThingDef ParentName="FurnitureWithQualityBase">
+    <defName>RPGrapheneGrowBin</defName>
+    <label>Graphene Hydroponics Bin</label>
+    <description>A small hydroponics growing bin for efficiently growing singular plants. Requires a heat source.</description>
+    <thingClass>Building_PlantGrower</thingClass>
+    <tickerType>Rare</tickerType>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsProduction</li>
+    </thingCategories>
+    <graphicData>
+      <texPath>Things/Building/Misc/RPG_Bin/RPGrapheneGrowBin</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>FloorEmplacement</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <pathCost>35</pathCost>
+    <fillPercent>0.35</fillPercent>
+    <statBases>
+      <Beauty>1.0</Beauty>
+      <MaxHitPoints>250</MaxHitPoints>
+      <WorkToBuild>500</WorkToBuild>
+      <Mass>3</Mass>
+      <Flammability>0.5</Flammability>
+      <Cleanliness>-1</Cleanliness>
+    </statBases>
+    <costList>
+      <RimPlasGraphene>25</RimPlasGraphene>
+      <Plasteel>25</Plasteel>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>120</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Glower">
+        <overlightRadius>3.5</overlightRadius>
+        <glowRadius>2.0</glowRadius>
+        <glowColor>(250,250,250,0)</glowColor>
+      </li>
+      <li Class="CompProperties_Flickable" />
+    </comps>
+    <fertility>3.5</fertility>
+    <leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+    <building>
+      <defaultPlantToGrow>Plant_Healroot</defaultPlantToGrow>
+      <sowTag>Hydroponic</sowTag>
+    </building>
+    <constructEffect>ConstructMetal</constructEffect>
+    <canOverlapZones>false</canOverlapZones>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+    <researchPrerequisites>
+      <li>Hydroponics</li>
+      <li>RimPlas_Graphene</li>
+    </researchPrerequisites>
+    <rotatable>false</rotatable>
+    <designationCategory>RimPlas_FurnDesig</designationCategory>
+  </ThingDef>
+  <!-- Heater and Cooler -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>RPGrapheneHeater</defName>
+    <label>Graphene heater</label>
+    <description>A Graphene device that efficiently converts electricity into heat. It can automatically turn itself on or off to reach a specific target temperature.</description>
+    <thingClass>Building_Heater</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Temperature/RPGrapheneHeater</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.5,0.3,0.7)</volume>
+        <offset>(0,0,-0.15)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.234375,0,0.515625,0.984375)</rect>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <pathCost>40</pathCost>
+    <blockWind>true</blockWind>
+    <rotatable>false</rotatable>
+    <fillPercent>0.4</fillPercent>
+    <thingCategories>
+      <li>BuildingsTemperature</li>
+    </thingCategories>
+    <statBases>
+      <WorkToBuild>1200</WorkToBuild>
+      <MaxHitPoints>250</MaxHitPoints>
+      <Mass>5</Mass>
+      <Flammability>0.25</Flammability>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <costList>
+      <CarboFibre>35</CarboFibre>
+      <RimPlasGraphene>15</RimPlasGraphene>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <placeWorkers>
+      <li>PlaceWorker_Heater</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>125</basePowerConsumption>
+        <shortCircuitInRain>false</shortCircuitInRain>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_TempControl">
+        <energyPerSecond>25</energyPerSecond>
+      </li>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3</glowRadius>
+        <glowColor>(255,150,100,0)</glowColor>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+    </comps>
+    <designationCategory>Temperature</designationCategory>
+    <designationHotKey>Misc3</designationHotKey>
+    <researchPrerequisites>
+      <li>Electricity</li>
+      <li>RimPlas_Graphene</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>7</constructionSkillPrerequisite>
+  </ThingDef>
+  <ThingDef ParentName="BuildingBase" Name="RPGCooler">
+    <defName>RPGrapheneCooler</defName>
+    <label>Graphene Cooler</label>
+    <description>A Graphene air-cooling machine that fits into a wall. Cool air comes out one side, while hot exhaust comes out the other. Can be used to efficinetly cool down rooms during summer, or to create a walk-in freezer.</description>
+    <thingClass>Building_Cooler</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Temperature/RPGrapheneCooler</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <blockWind>true</blockWind>
+    <fillPercent>1</fillPercent>
+    <coversFloor>true</coversFloor>
+    <blockLight>true</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <statBases>
+      <WorkToBuild>1600</WorkToBuild>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>0.7</Flammability>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <costList>
+      <CarboFibre>65</CarboFibre>
+      <RimPlasGraphene>25</RimPlasGraphene>
+      <ComponentIndustrial>3</ComponentIndustrial>
+    </costList>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <placeWorkers>
+      <li>PlaceWorker_Cooler</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <building>
+      <canPlaceOverWall>true</canPlaceOverWall>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>150</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_TempControl">
+        <energyPerSecond>-25</energyPerSecond>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+    </comps>
+    <designationCategory>Temperature</designationCategory>
+    <designationHotKey>Misc4</designationHotKey>
+    <researchPrerequisites>
+      <li>AirConditioning</li>
+      <li>RimPlas_Graphene</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+  </ThingDef>
+  <!--  Regulator -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>RPGrapheneRegulator</defName>
+    <label>Graphene Regulator</label>
+    <description>A Graphene air-cooling and heating machine that fits into a wall. When cooling, cool air comes out one side, while hot exhaust comes out the other or hot air will heat the room. Can be used to efficinetly regulate the temperature of a room.</description>
+    <thingClass>RimPlas.Building_TempRegulator</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Temperature/RPGrapheneRegulator</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <blockWind>true</blockWind>
+    <fillPercent>1</fillPercent>
+    <coversFloor>true</coversFloor>
+    <blockLight>true</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <castEdgeShadows>true</castEdgeShadows>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <statBases>
+      <WorkToBuild>1800</WorkToBuild>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>0.7</Flammability>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <costList>
+      <CarboFibre>65</CarboFibre>
+      <RimPlasGraphene>30</RimPlasGraphene>
+      <ComponentIndustrial>5</ComponentIndustrial>
+    </costList>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <placeWorkers>
+      <li>PlaceWorker_Cooler</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <building>
+      <canPlaceOverWall>true</canPlaceOverWall>
+    </building>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>200</basePowerConsumption>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_TempControl">
+        <energyPerSecond>24</energyPerSecond>
+        <!--  Positive, will invert for cooling -->
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+    </comps>
+    <designationCategory>Temperature</designationCategory>
+    <designationHotKey>Misc4</designationHotKey>
+    <researchPrerequisites>
+      <li>AirConditioning</li>
+      <li>RimPlas_Graphene</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>9</constructionSkillPrerequisite>
+  </ThingDef>
+  <!-- Intelligent Vent -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>RPGraphene_Vent</defName>
+    <label>Graphene vent</label>
+    <description>A vent for equalizing the temperature efficiently between two rooms without allowing people to walk between them. By default the graphene membrane in this vent's filter has an intelligent material design to dissallow air flow when either side of the vent is in a fixed range (10C - 30C), this property can be toggled on and off.</description>
+    <thingClass>RimPlas.RPGraphene_Vent</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Temperature/RPGraphene_Vent/RPGraphene_Vent</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <fillPercent>1</fillPercent>
+    <coversFloor>true</coversFloor>
+    <blockLight>true</blockLight>
+    <castEdgeShadows>true</castEdgeShadows>
+    <canOverlapZones>false</canOverlapZones>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <statBases>
+      <WorkToBuild>400</WorkToBuild>
+      <MaxHitPoints>300</MaxHitPoints>
+      <Flammability>0.7</Flammability>
+    </statBases>
+    <tickerType>Rare</tickerType>
+    <costList>
+      <CarboFibre>15</CarboFibre>
+      <RimPlasGraphene>15</RimPlasGraphene>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <placeWorkers>
+      <li>PlaceWorker_Vent</li>
+    </placeWorkers>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <building>
+      <canPlaceOverWall>true</canPlaceOverWall>
+    </building>
+    <researchPrerequisites>
+      <li>RimPlas_Graphene</li>
+    </researchPrerequisites>
+    <designationCategory>Temperature</designationCategory>
+    <designationHotKey>Misc5</designationHotKey>
+    <comps>
+      <li Class="CompProperties_Flickable">
+        <commandTexture>UI/Commands/Vent</commandTexture>
+        <commandLabelKey>CommandDesignateOpenCloseVentLabel</commandLabelKey>
+        <commandDescKey>CommandDesignateOpenCloseVentDesc</commandDescKey>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+    </comps>
+  </ThingDef>
+  <!-- RegenWalls -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>RPGrapheneRegenWall</defName>
+    <label>Graphene Regenerating Wall</label>
+    <description>An impassable wall. Capable of holding up a roof. This powered graphene version has self-repair properties.</description>
+    <thingClass>RimPlas.Building_Heal</thingClass>
+    <category>Building</category>
+    <graphicData>
+      <texPath>Things/Building/Linked/RPGrapheneRegenWall/RPGrapheneRegenWall_Atlas</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <linkType>CornerFiller</linkType>
+      <linkFlags>
+        <li>Wall</li>
+        <li>Rock</li>
+      </linkFlags>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+        <edgeTop>Damage/Edge</edgeTop>
+        <edgeBot>Damage/Edge</edgeBot>
+        <edgeLeft>Damage/Edge</edgeLeft>
+        <edgeRight>Damage/Edge</edgeRight>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Linked/RPGrapheneRegenWall/RPGrapheneRegenWall_MenuIcon</uiIconPath>
+    <statBases>
+      <MaxHitPoints>750</MaxHitPoints>
+      <WorkToBuild>150</WorkToBuild>
+      <Flammability>0.0</Flammability>
+    </statBases>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>1</fillPercent>
+    <coversFloor>true</coversFloor>
+    <drawStyleCategory>Walls</drawStyleCategory>
+    <tickerType>Normal</tickerType>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <holdsRoof>true</holdsRoof>
+    <designationCategory>RimPlas_FurnDesig</designationCategory>
+    <staticSunShadowHeight>1.0</staticSunShadowHeight>
+    <blockLight>true</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <costList>
+      <CarboFibre>5</CarboFibre>
+      <RimPlasGraphene>5</RimPlasGraphene>
+      <ComponentIndustrial>1</ComponentIndustrial>
+    </costList>
+    <researchPrerequisites>
+      <li>RimPlas_Graphene</li>
+    </researchPrerequisites>
+    <!--
+	<costStuffCount>5</costStuffCount>
+    <stuffCategories>
+      <li>Metallic</li>
+      <li>Woody</li>
+      <li>Stony</li>
+    </stuffCategories>
+	-->
+    <building>
+      <isInert>true</isInert>
+      <ai_chillDestination>false</ai_chillDestination>
+      <blueprintGraphicData>
+        <texPath>Things/Building/Linked/RPGrapheneRegenWall/RPGrapheneRegenWall_Blueprint_Atlas</texPath>
+      </blueprintGraphicData>
+    </building>
+    <designationHotKey>Misc3</designationHotKey>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerTrader</compClass>
+        <basePowerConsumption>25</basePowerConsumption>
+        <shortCircuitInRain>false</shortCircuitInRain>
+      </li>
+      <li Class="CompProperties_Flickable" />
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="RimPlas.CompProperties_BuildHeal">
+        <HealFactor>0.05</HealFactor>
+        <PowerNeeded>true</PowerNeeded>
+      </li>
+    </comps>
+  </ThingDef>
+  <!--  Geothermal -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>RPGrapheneGeoGenerator</defName>
+    <label>Graphene geothermal generator</label>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <description>Similar to the standard generator, but more compact, this produces electricity from geothermal steam geysers, but much more efficiently. Must be placed on a steam geyser.</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Power/RPGrapheneGeoPlant</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(4,4)</drawSize>
+      <shadowData>
+        <volume>(4.03,1.0,3.25)</volume>
+        <offset>(0,0,-0.25)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.3,0,3.4,4)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <blockWind>true</blockWind>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <fillPercent>1</fillPercent>
+    <blockLight>true</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <MaxHitPoints>500</MaxHitPoints>
+      <WorkToBuild>12500</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Beauty>-30</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <size>(4,4)</size>
+    <costList>
+      <Steel>200</Steel>
+      <RimPlasGraphene>100</RimPlasGraphene>
+      <ComponentIndustrial>8</ComponentIndustrial>
+      <ComponentSpacer>2</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>CompPowerPlantSteam</compClass>
+        <basePowerConsumption>-5000</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_AmbientSound">
+        <sound>GeothermalPlant_Ambience</sound>
+        <disabledOnUnpowered>true</disabledOnUnpowered>
+      </li>
+    </comps>
+    <rotatable>false</rotatable>
+    <terrainAffordanceNeeded>Heavy</terrainAffordanceNeeded>
+    <designationCategory>Power</designationCategory>
+    <placeWorkers>
+      <li>PlaceWorker_OnSteamGeyser</li>
+    </placeWorkers>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <constructEffect>ConstructMetal</constructEffect>
+    <designationHotKey>Misc6</designationHotKey>
+    <researchPrerequisites>
+      <li>GeothermalPower</li>
+      <li>RimPlas_Graphene</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+  </ThingDef>
+  <!--  Wind Turbine -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>RPGrapheneWindTurbine</defName>
+    <thingClass>Building</thingClass>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <label>Graphene wind turbine</label>
+    <description>A more compact and efficient wind-powered electrical generator. Requires clear space in front and behind for optimal air flow.</description>
+    <graphicData>
+      <texPath>Things/Building/Power/RPGrapheneWindTurbine/RPGrapheneWindTurbineBody</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,2)</drawSize>
+      <shadowData>
+        <volume>(0.3, 1.0, 0.8)</volume>
+        <offset>(-0.1,0,-0.08)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(1,0.15,0.5,0.7)</rect>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Power/RPGrapheneWindTurbine/RPGrapheneWindTurbine_MenuIcon</uiIconPath>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+    <blockWind>true</blockWind>
+    <fillPercent>0.5</fillPercent>
+    <statBases>
+      <MaxHitPoints>120</MaxHitPoints>
+      <WorkToBuild>2500</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Beauty>-8</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <size>(3,2)</size>
+    <selectable>true</selectable>
+    <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
+    <rotatable>true</rotatable>
+    <designationCategory>Power</designationCategory>
+    <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+    <building>
+      <allowAutoroof>false</allowAutoroof>
+    </building>
+    <costList>
+      <Steel>50</Steel>
+      <RimPlasGraphene>20</RimPlasGraphene>
+      <ComponentIndustrial>2</ComponentIndustrial>
+      <ComponentSpacer>1</ComponentSpacer>
+    </costList>
+    <constructEffect>ConstructMetal</constructEffect>
+    <placeWorkers>
+      <li>RimPlas.PlaceWorker_RPWindTurbine</li>
+    </placeWorkers>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>RimPlas.RPCompPowerPlantWind</compClass>
+        <basePowerConsumption>-2500</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+    </comps>
+    <designationHotKey>Misc7</designationHotKey>
+    <researchPrerequisites>
+      <li>Electricity</li>
+      <li>RimPlas_Graphene</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>7</constructionSkillPrerequisite>
+  </ThingDef>
+  <!--  Electroliser -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>RPGrapheneElectroliser</defName>
+    <label>Graphene Electroliser Generator</label>
+    <drawerType>MapMeshAndRealTime</drawerType>
+    <description>Produces electricity from a body of water by converting it into hydrogen and oxygen and burning those resulting gases. Must be placed to collect a source of water and is more effective using running water sources.</description>
+    <thingClass>Building</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Power/RPGrapheneElectroliser/RPGrapheneElectroliser</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,3)</drawSize>
+      <shadowData>
+        <volume>(1.6,1,1.16)</volume>
+        <offset>(-0.20,0,0)</offset>
+      </shadowData>
+      <damageData>
+        <rectN>(0.1,1.2,2.75,1.25)</rectN>
+        <rectE>(1.25,0.2,1.5,2.7)</rectE>
+        <rectS>(0.2,1.2,2.7,1.25)</rectS>
+        <rectW>(1.25,0.2,1.5,2.7)</rectW>
+      </damageData>
+    </graphicData>
+    <castEdgeShadows>false</castEdgeShadows>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>Impassable</passability>
+    <disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+    <blockWind>false</blockWind>
+    <scatterableOnMapGen>false</scatterableOnMapGen>
+    <fillPercent>0.7</fillPercent>
+    <blockLight>true</blockLight>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <MaxHitPoints>450</MaxHitPoints>
+      <WorkToBuild>9000</WorkToBuild>
+      <Flammability>0.5</Flammability>
+      <Beauty>-20</Beauty>
+    </statBases>
+    <tickerType>Normal</tickerType>
+    <size>(3,3)</size>
+    <costList>
+      <Steel>30</Steel>
+      <CarboPlasteel>60</CarboPlasteel>
+      <RimPlas>15</RimPlas>
+      <RimPlasGraphene>15</RimPlasGraphene>
+      <ComponentIndustrial>6</ComponentIndustrial>
+      <ComponentSpacer>3</ComponentSpacer>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Power">
+        <compClass>RimPlas.CompPowerPlant_RPElectroliser</compClass>
+        <basePowerConsumption>-2100</basePowerConsumption>
+        <transmitsPower>true</transmitsPower>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+      <li Class="CompProperties_Explosive">
+        <explosiveRadius>3.9</explosiveRadius>
+        <explosiveDamageType>Flame</explosiveDamageType>
+        <startWickHitPointsPercent>0.25</startWickHitPointsPercent>
+        <chanceNeverExplodeFromDamage>0.5</chanceNeverExplodeFromDamage>
+        <wickTicks>1250~2500</wickTicks>
+      </li>
+      <li Class="CompProperties_AmbientSound">
+        <sound>GeothermalPlant_Ambience</sound>
+        <disabledOnUnpowered>true</disabledOnUnpowered>
+      </li>
+    </comps>
+    <rotatable>true</rotatable>
+    <terrainAffordanceNeeded>
+    </terrainAffordanceNeeded>
+    <!-- handled by the placeworker -->
+    <designationCategory>Power</designationCategory>
+    <placeWorkers>
+      <li>RimPlas.PlaceWorker_RPElectroliser</li>
+    </placeWorkers>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+    </building>
+    <constructEffect>ConstructMetal</constructEffect>
+    <researchPrerequisites>
+      <li>RPGrapheneElectroliser</li>
+    </researchPrerequisites>
+    <constructionSkillPrerequisite>12</constructionSkillPrerequisite>
+  </ThingDef>
+</Defs>

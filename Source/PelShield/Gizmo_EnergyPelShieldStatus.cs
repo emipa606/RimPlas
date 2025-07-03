@@ -41,8 +41,7 @@ public class Gizmo_EnergyPelShieldStatus : Gizmo
             Text.Font = GameFont.Small;
             Text.Anchor = TextAnchor.MiddleCenter;
             Widgets.Label(rect3,
-                (shield.energy * 100f).ToString("F0") + " / " +
-                (shield.GetStatValue(StatDefOf.EnergyShieldEnergyMax) * 100f).ToString("F0"));
+                $"{shield.energy * 100f:F0} / {shield.GetStatValue(StatDefOf.EnergyShieldEnergyMax) * 100f:F0}");
             Text.Anchor = TextAnchor.UpperLeft;
         });
         return new GizmoResult(GizmoState.Clear);

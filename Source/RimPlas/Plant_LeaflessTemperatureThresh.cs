@@ -5,11 +5,10 @@ using Verse;
 namespace RimPlas;
 
 [HarmonyPatch(typeof(Plant), "LeaflessTemperatureThresh", MethodType.Getter)]
-public class LeaflessTemperatureThresh_Patch
+[HarmonyPriority(800)]
+public class Plant_LeaflessTemperatureThresh
 {
-    [HarmonyPrefix]
-    [HarmonyPriority(800)]
-    public static bool PreFix(ref Plant __instance)
+    public static bool Prefix(ref Plant __instance)
     {
         var plant = __instance;
         if (plant?.Map == null)

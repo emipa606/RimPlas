@@ -1,0 +1,693 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+  <!-- ============== Designation Category =================== -->
+  <DesignationCategoryDef>
+    <defName>RimPlas_FurnDesig</defName>
+    <label>RimPlas</label>
+    <description>Listings of Rimplas Furniture items</description>
+    <order>333</order>
+    <specialDesignatorClasses>
+      <li>Designator_Cancel</li>
+      <li>Designator_Deconstruct</li>
+    </specialDesignatorClasses>
+  </DesignationCategoryDef>
+  <!-- ============= Category Def =========================== -->
+  <ThingCategoryDef>
+    <defName>BuildingsRimPlas</defName>
+    <label>RimPlas Furniture</label>
+    <parent>BuildingsFurniture</parent>
+    <iconPath>UI/Icons/ThingsCategories/RimPlasCat</iconPath>
+    <resourceReadoutRoot>true</resourceReadoutRoot>
+  </ThingCategoryDef>
+  <!-- ===================================================== -->
+  <ThingDef Name="RimPlasFurnitureBase" ParentName="BuildingBase" Abstract="True">
+    <designationCategory>RimPlas_FurnDesig</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsRimPlas</li>
+    </thingCategories>
+    <researchPrerequisites>
+      <li>RimPlas</li>
+    </researchPrerequisites>
+    <techLevel>Industrial</techLevel>
+    <statBases>
+      <Flammability>0.3</Flammability>
+    </statBases>
+  </ThingDef>
+  <!--============================== Beds ==============================-->
+  <!--
+  <ThingDef ParentName="RimPlasFurnitureBase" Name="PlasBedBase" Abstract="True">
+    <thingClass>Building_Bed</thingClass>
+    <altitudeLayer>Building</altitudeLayer>
+    <comps>
+      <li Class="CompProperties_RoomIdentifier">
+        <roomStat>Impressiveness</roomStat>
+      </li>
+    </comps>
+    <drawGUIOverlay>true</drawGUIOverlay>
+    <canOverlapZones>false</canOverlapZones>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <passability>PassThroughOnly</passability>
+    <defaultPlacingRot>South</defaultPlacingRot>
+  </ThingDef>
+  -->
+  <!-- =========================== RimPlas Barrier ============================= -->
+  <ThingDef ParentName="BuildingBase">
+    <defName>RimPlas_Barrier</defName>
+    <label>RimPlas Barrier</label>
+    <description>RimPlas barrier that provides some cover and protection. Easy and quick to construct but slightly flammable. Lighter but less robust than sandbags</description>
+    <thingClass>Building</thingClass>
+    <category>Building</category>
+    <designationCategory>RimPlas_FurnDesig</designationCategory>
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingCategories>
+      <li>BuildingsRimPlas</li>
+    </thingCategories>
+    <researchPrerequisites>
+      <li>RimPlas</li>
+    </researchPrerequisites>
+    <techLevel>Spacer</techLevel>
+    <graphicData>
+      <texPath>Things/Building/Furniture/RimPlas_Barrier/RimPlas_Barrier</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <!-- <linkType>Basic</linkType>
+      		<linkFlags>
+        		<li>Sandbags</li>
+      		</linkFlags> -->
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <pathCost>40</pathCost>
+    <pathCostIgnoreRepeat>true</pathCostIgnoreRepeat>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>true</castEdgeShadows>
+    <fillPercent>0.65</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <statBases>
+      <Mass>1.0</Mass>
+      <MaxHitPoints>400</MaxHitPoints>
+      <Beauty>-5</Beauty>
+      <WorkToBuild>80</WorkToBuild>
+      <Flammability>0.3</Flammability>
+    </statBases>
+    <building>
+      <ai_chillDestination>false</ai_chillDestination>
+      <isInert>true</isInert>
+      <!-- <blueprintGraphicData>
+        		<texPath>Things/Building/Linked/Sandbags_Blueprint_Atlas</texPath>
+      		</blueprintGraphicData> -->
+    </building>
+    <drawStyleCategory>Defenses</drawStyleCategory>
+    <costList>
+      <RimPlas>5</RimPlas>
+    </costList>
+    <filthLeaving>Filth_RubbleBuilding</filthLeaving>
+    <rotatable>false</rotatable>
+    <selectable>true</selectable>
+    <neverMultiSelect>true</neverMultiSelect>
+    <terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+    <staticSunShadowHeight>0.20</staticSunShadowHeight>
+    <constructEffect>ConstructDirt</constructEffect>
+    <repairEffect>ConstructDirt</repairEffect>
+    <designationHotKey>Misc1</designationHotKey>
+  </ThingDef>
+  <!--=========================== Animal beds ===============================-->
+  <ThingDef ParentName="RimPlasFurnitureBase">
+    <defName>RimPlas_AnimalSleepingBox</defName>
+    <thingClass>Building_Bed</thingClass>
+    <label>RimPlas Animal Box</label>
+    <description>A small box for animals to sleep in. Fits smaller animals like chickens, cats, or small dogs.</description>
+    <rotatable>false</rotatable>
+    <fillPercent>0.15</fillPercent>
+    <pathCost>40</pathCost>
+    <passability>PassThroughOnly</passability>
+    <canOverlapZones>false</canOverlapZones>
+    <graphicData>
+      <texPath>Things/Building/Furniture/RimPlas_AnimalSleepBox/RimPlas_AnimalSleepBox</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <damageData>
+        <rect>(0.05,0.05,0.9,0.9)</rect>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <castEdgeShadows>true</castEdgeShadows>
+    <costList>
+      <RimPlas>25</RimPlas>
+    </costList>
+    <building>
+      <bed_humanlike>false</bed_humanlike>
+      <bed_maxBodySize>0.55</bed_maxBodySize>
+      <bed_showSleeperBody>true</bed_showSleeperBody>
+      <bed_healPerDay>4</bed_healPerDay>
+    </building>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>75</MaxHitPoints>
+      <WorkToBuild>180</WorkToBuild>
+      <Mass>2.5</Mass>
+      <BedRestEffectiveness>0.93</BedRestEffectiveness>
+      <Comfort>0.60</Comfort>
+      <ImmunityGainSpeedFactor>1.05</ImmunityGainSpeedFactor>
+      <SurgerySuccessChanceFactor>1</SurgerySuccessChanceFactor>
+    </statBases>
+    <comps>
+      <li Class="CompProperties_AssignableToPawn">
+        <drawAssignmentOverlay>false</drawAssignmentOverlay>
+        <compClass>CompAssignableToPawn_Bed</compClass>
+      </li>
+    </comps>
+    <uiIconScale>0.75</uiIconScale>
+  </ThingDef>
+  <!--======================= Basic domestic furniture ==============================-->
+  <ThingDef ParentName="RimPlasFurnitureBase">
+    <defName>RimPlas_Stool</defName>
+    <label>RimPlas Stool</label>
+    <description>A simple platform on which to sit. Not very comfortable, but much better than nothing. Can be used at tables, work stations, and elsewhere.</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/RimPlas_Stool/RimPlas_Stool</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <damageData>
+        <rectN>(0.125,0.296875,0.734375,0.421875)</rectN>
+        <rectS>(0.125,0.296875,0.734375,0.421875)</rectS>
+        <rectE>(0.234375,0.296875,0.5,0.546875)</rectE>
+        <rectW>(0.234375,0.296875,0.5,0.546875)</rectW>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+      <shadowData>
+        <volume>(0.18, 0.23, 0.18)</volume>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>75</MaxHitPoints>
+      <WorkToBuild>420</WorkToBuild>
+      <Mass>2.5</Mass>
+      <Beauty>0</Beauty>
+      <Comfort>0.5</Comfort>
+    </statBases>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <costList>
+      <RimPlas>25</RimPlas>
+    </costList>
+    <pathCost>30</pathCost>
+    <designationHotKey>Misc6</designationHotKey>
+    <fillPercent>0.20</fillPercent>
+    <building>
+      <isSittable>true</isSittable>
+    </building>
+    <uiIconOffset>(0, -0.05)</uiIconOffset>
+  </ThingDef>
+  <ThingDef ParentName="RimPlasFurnitureBase">
+    <defName>RimPlas_DiningChair</defName>
+    <label>RimPlas Dining Chair</label>
+    <description>A comfortable and attractive chair. Can be used at tables, work stations, and elsewhere.</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/RimPlas_DiningChair/RimPlas_DiningChair</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <damageData>
+        <rectN>(0.25,0.234375,0.5,0.28125)</rectN>
+        <rectS>(0.25,0.234375,0.5,0.28125)</rectS>
+        <rectE>(0.28125,0.25,0.453125,0.25)</rectE>
+        <rectW>(0.28125,0.25,0.453125,0.25)</rectW>
+      </damageData>
+      <shadowData>
+        <volume>(0.23, 0.26, 0.23)</volume>
+      </shadowData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <statBases>
+      <MaxHitPoints>170</MaxHitPoints>
+      <WorkToBuild>700</WorkToBuild>
+      <Mass>4</Mass>
+      <Beauty>6</Beauty>
+      <Comfort>0.70</Comfort>
+    </statBases>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <costList>
+      <RimPlas>45</RimPlas>
+    </costList>
+    <pathCost>30</pathCost>
+    <designationHotKey>Misc7</designationHotKey>
+    <fillPercent>0.35</fillPercent>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <building>
+      <isSittable>true</isSittable>
+    </building>
+    <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+    <researchPrerequisites>
+      <li>RimPlas</li>
+    </researchPrerequisites>
+  </ThingDef>
+  <!-- Drug Cabinet -->
+  <ThingDef ParentName="RimPlasTableBase">
+    <defName>RimPlas_DrugCabinet</defName>
+    <label>RimPlas Drug Cabinet</label>
+    <description>A small cabinet to store drugs. Includes a small cleanliness boost and a production boost to drug lab benches.</description>
+    <surfaceType>Item</surfaceType>
+    <graphicData>
+      <texPath>Things/Building/Furniture/RimPlas_DrugCabinet/RimPlas_DrugCabinet</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+      </shadowData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>80</MaxHitPoints>
+      <WorkToBuild>800</WorkToBuild>
+      <Mass>4.5</Mass>
+      <Flammability>0.3</Flammability>
+      <Beauty>2</Beauty>
+      <Cleanliness>0.05</Cleanliness>
+    </statBases>
+    <pathCost>60</pathCost>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.5</fillPercent>
+    <canOverlapZones>false</canOverlapZones>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <costList>
+      <RimPlas>35</RimPlas>
+    </costList>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>RimPlas</li>
+      <li>ComplexFurniture</li>
+      <li>DrugProduction</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <WorkTableWorkSpeedFactor>0.05</WorkTableWorkSpeedFactor>
+        </statOffsets>
+        <maxSimultaneous>2</maxSimultaneous>
+      </li>
+      <li Class="CompProperties_Breakdownable" />
+    </comps>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+    <castEdgeShadows>false</castEdgeShadows>
+    <!-- <thingCategories>
+      		<li>BuildingsMisc</li>
+    	</thingCategories> -->
+    <!-- <designationCategory>Misc</designationCategory> -->
+    <minifiedDef>MinifiedThing</minifiedDef>
+    <thingClass>Building_Storage</thingClass>
+    <building>
+      <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+      <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+      <defaultStorageSettings>
+        <priority>Important</priority>
+      </defaultStorageSettings>
+    </building>
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+    </inspectorTabs>
+    <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+  </ThingDef>
+  <!-- Table base -->
+  <ThingDef Abstract="True" ParentName="RimPlasFurnitureBase" Name="RimPlasTableBase">
+    <description>People eat off tables when chairs are placed facing them.</description>
+    <thingClass>Building</thingClass>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <castEdgeShadows>true</castEdgeShadows>
+    <pathCost>60</pathCost>
+    <fillPercent>0.4</fillPercent>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <canOverlapZones>false</canOverlapZones>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <staticSunShadowHeight>0.20</staticSunShadowHeight>
+    <surfaceType>Eat</surfaceType>
+  </ThingDef>
+  <ThingDef Abstract="True" ParentName="RimPlasTableBase" Name="RimPlasTableGatherSpotBase">
+    <comps>
+      <li>
+        <compClass>CompGatherSpot</compClass>
+      </li>
+    </comps>
+  </ThingDef>
+  <ThingDef ParentName="RimPlasTableBase">
+    <defName>RimPlas_EndTable</defName>
+    <label>RimPlas End Table</label>
+    <description>A small bedside table which makes nearby beds a little bit more comfortable. Must be placed directly adjacent to the head of the bed. Placing more than one end table near the same bed has no effect.</description>
+    <surfaceType>Item</surfaceType>
+    <graphicData>
+      <texPath>Things/Building/Furniture/RimPlas_EndTable/RimPlas_EndTable</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <shadowData>
+        <volume>(0.3, 0.6, 0.3)</volume>
+      </shadowData>
+    </graphicData>
+    <statBases>
+      <MaxHitPoints>75</MaxHitPoints>
+      <WorkToBuild>1000</WorkToBuild>
+      <Mass>4.5</Mass>
+      <Beauty>2.5</Beauty>
+    </statBases>
+    <pathCost>60</pathCost>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <costList>
+      <RimPlas>85</RimPlas>
+    </costList>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>RimPlas</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <Comfort>0.05</Comfort>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+        <mustBePlacedAdjacentCardinalToBedHead>true</mustBePlacedAdjacentCardinalToBedHead>
+      </li>
+    </comps>
+    <staticSunShadowHeight>0</staticSunShadowHeight>
+    <castEdgeShadows>false</castEdgeShadows>
+  </ThingDef>
+  <ThingDef ParentName="RimPlasTableGatherSpotBase">
+    <defName>RimPlas_Table_Tiny</defName>
+    <label>Rimplas Table (1x1)</label>
+    <graphicData>
+      <texPath>Things/Building/Furniture/RimPlas_Table_Tiny/RimPlas_Table_Tiny</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>(1,1)</drawSize>
+      <damageData>
+        <rect>(0.1,0.29,0.8,0.7)</rect>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <uiIconPath>Things/Building/Furniture/RimPlas_Table_Tiny/RimPlas_Table_Tiny</uiIconPath>
+    <uiIconScale>0.8</uiIconScale>
+    <statBases>
+      <MaxHitPoints>75</MaxHitPoints>
+      <WorkToMake>500</WorkToMake>
+      <Mass>3</Mass>
+      <Beauty>1</Beauty>
+    </statBases>
+    <size>(1,1)</size>
+    <costList>
+      <RimPlas>15</RimPlas>
+    </costList>
+    <rotatable>false</rotatable>
+  </ThingDef>
+  <ThingDef ParentName="RimPlasTableGatherSpotBase">
+    <defName>RimPlas_Table_Small</defName>
+    <label>RimPlas Table (1x2)</label>
+    <graphicData>
+      <texPath>Things/Building/Furniture/RimPlas_Table_Small/RimPlas_Table_Small</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,4)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <uiIconScale>0.8</uiIconScale>
+    <statBases>
+      <MaxHitPoints>75</MaxHitPoints>
+      <WorkToBuild>730</WorkToBuild>
+      <Mass>4.5</Mass>
+      <Beauty>0.5</Beauty>
+    </statBases>
+    <size>(1,2)</size>
+    <costList>
+      <RimPlas>28</RimPlas>
+    </costList>
+  </ThingDef>
+  <!-- ================= Plant Pot ========================== -->
+  <ThingDef ParentName="RimPlasFurnitureBase">
+    <defName>RimPlas_PlantPot</defName>
+    <label>RimPlas Plant Pot</label>
+    <description>Plant decorative flowers here to improve the mood of people nearby.</description>
+    <thingClass>Building_PlantGrower</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Furniture/RimPlas_PlantPot/RimPlas_PlantPot</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.55, 0.35, 0.3)</volume>
+        <offset>(0, 0, -0.28)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.2,0.2,0.6,0.6)</rect>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.20</fillPercent>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>220</WorkToBuild>
+      <Mass>1.5</Mass>
+    </statBases>
+    <costList>
+      <RimPlas>20</RimPlas>
+    </costList>
+    <comps>
+      <li Class="CompProperties_Forbiddable" />
+    </comps>
+    <fertility>1.0</fertility>
+    <designationHotKey>Misc9</designationHotKey>
+    <leaveResourcesWhenKilled>false</leaveResourcesWhenKilled>
+    <building>
+      <defaultPlantToGrow>Plant_Daylily</defaultPlantToGrow>
+      <sowTag>Decorative</sowTag>
+    </building>
+    <rotatable>false</rotatable>
+    <uiIconOffset>(0, -0.05)</uiIconOffset>
+  </ThingDef>
+  <!--============================== Storage ==============================-->
+  <ThingDef ParentName="RimPlasFurnitureBase">
+    <defName>RimPlas_Shelf</defName>
+    <label>RimPlas Shelf</label>
+    <description>A shelf for storing miscellaneous items. Items stored in this will not deteriorate, even if outside.</description>
+    <thingClass>Building_Storage</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Furniture/RimPlas_Shelf/RimPlas_Shelf</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(3,2)</drawSize>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.4</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <costList>
+      <RimPlas>30</RimPlas>
+    </costList>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>5</Mass>
+      <WorkToBuild>500</WorkToBuild>
+    </statBases>
+    <size>(2,1)</size>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <building>
+      <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+      <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+      <defaultStorageSettings>
+        <priority>Important</priority>
+      </defaultStorageSettings>
+    </building>
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+    </inspectorTabs>
+    <designationHotKey>Misc12</designationHotKey>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <surfaceType>Item</surfaceType>
+    <canOverlapZones>false</canOverlapZones>
+    <researchPrerequisites>
+      <li>RimPlas</li>
+    </researchPrerequisites>
+  </ThingDef>
+  <ThingDef ParentName="RimPlasFurnitureBase">
+    <defName>RimPlas_Rack</defName>
+    <label>RimPlas Small Shelf</label>
+    <description>Items stored in this will not deteriorate, even if outside.</description>
+    <thingClass>Building_Storage</thingClass>
+    <graphicData>
+      <texPath>Things/Building/Furniture/RimPlas_Rack/RimPlas_Rack</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(1.5,1.5)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.4</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <costList>
+      <RimPlas>20</RimPlas>
+    </costList>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>2.5</Mass>
+      <WorkToBuild>400</WorkToBuild>
+    </statBases>
+    <size>(1,1)</size>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <building>
+      <preventDeteriorationOnTop>true</preventDeteriorationOnTop>
+      <ignoreStoredThingsBeauty>true</ignoreStoredThingsBeauty>
+      <defaultStorageSettings>
+        <priority>Important</priority>
+      </defaultStorageSettings>
+    </building>
+    <inspectorTabs>
+      <li>ITab_Storage</li>
+    </inspectorTabs>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <surfaceType>Item</surfaceType>
+    <canOverlapZones>false</canOverlapZones>
+    <researchPrerequisites>
+      <li>RimPlas</li>
+    </researchPrerequisites>
+  </ThingDef>
+  <!--============================== Dressers ==============================-->
+  <ThingDef ParentName="RimPlasFurnitureBase">
+    <defName>RimPlas_Dresser</defName>
+    <label>RimPlas Dresser</label>
+    <description>A dresser. Gives a small comfort bonus to all nearby beds. Placing more than one dresser near the same bed has no effect.</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/RimPlas_Dresser/RimPlas_Dresser</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+      <drawSize>(2,1)</drawSize>
+      <damageData>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <passability>PassThroughOnly</passability>
+    <fillPercent>0.4</fillPercent>
+    <castEdgeShadows>true</castEdgeShadows>
+    <pathCost>60</pathCost>
+    <defaultPlacingRot>South</defaultPlacingRot>
+    <costList>
+      <RimPlas>50</RimPlas>
+    </costList>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <Mass>12</Mass>
+      <WorkToBuild>1800</WorkToBuild>
+      <Beauty>4</Beauty>
+    </statBases>
+    <size>(2,1)</size>
+    <designationHotKey>Misc12</designationHotKey>
+    <staticSunShadowHeight>0.5</staticSunShadowHeight>
+    <surfaceType>Item</surfaceType>
+    <canOverlapZones>false</canOverlapZones>
+    <placeWorkers>
+      <li>PlaceWorker_ShowFacilitiesConnections</li>
+    </placeWorkers>
+    <researchPrerequisites>
+      <li>RimPlas</li>
+    </researchPrerequisites>
+    <comps>
+      <li Class="CompProperties_Facility">
+        <statOffsets>
+          <Comfort>0.05</Comfort>
+        </statOffsets>
+        <maxSimultaneous>1</maxSimultaneous>
+        <maxDistance>6</maxDistance>
+      </li>
+    </comps>
+  </ThingDef>
+  <!-- ============================ Joy ====================================== -->
+  <ThingDef ParentName="RimPlasFurnitureBase">
+    <defName>RimPlas_GameOfUr</defName>
+    <label>RimPlas Game-of-Ur board</label>
+    <description>Dating from 2500BC, this exciting yet infuriating board game can be played by one or two people. It trains intellectual skills.</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/RimPlas_GameOfUr/RimPlas_GameOfUr</texPath>
+      <graphicClass>Graphic_Multi</graphicClass>
+    </graphicData>
+    <castEdgeShadows>false</castEdgeShadows>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>true</rotatable>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <fillPercent>0.20</fillPercent>
+    <building>
+      <joyKind>Gaming_Cerebral</joyKind>
+    </building>
+    <statBases>
+      <MaxHitPoints>90</MaxHitPoints>
+      <WorkToBuild>2500</WorkToBuild>
+      <Mass>1.5</Mass>
+      <Beauty>2</Beauty>
+      <JoyGainFactor>0.8</JoyGainFactor>
+    </statBases>
+    <costList>
+      <RimPlas>35</RimPlas>
+    </costList>
+    <pathCost>20</pathCost>
+    <passability>PassThroughOnly</passability>
+    <researchPrerequisites>
+      <li>RimPlas</li>
+    </researchPrerequisites>
+  </ThingDef>
+  <ThingDef ParentName="RimPlasFurnitureBase">
+    <defName>RimPlas_ChessTable</defName>
+    <label>RimPlas Chess Table</label>
+    <description>The ancient game of kings. Fun for a few hours here and there, even playing alone. It trains intellectual skills.</description>
+    <graphicData>
+      <texPath>Things/Building/Furniture/RimPlas_ChessTable/RimPlas_ChessTable</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <shadowData>
+        <volume>(0.65, 0.25, 0.6)</volume>
+        <offset>(0, 0, -0.15)</offset>
+      </shadowData>
+      <damageData>
+        <rect>(0.09375,0.296875,0.796875,0.703125)</rect>
+        <cornerTL>Damage/Corner</cornerTL>
+        <cornerTR>Damage/Corner</cornerTR>
+        <cornerBL>Damage/Corner</cornerBL>
+        <cornerBR>Damage/Corner</cornerBR>
+      </damageData>
+    </graphicData>
+    <altitudeLayer>Building</altitudeLayer>
+    <rotatable>false</rotatable>
+    <socialPropernessMatters>true</socialPropernessMatters>
+    <fillPercent>0.40</fillPercent>
+    <building>
+      <joyKind>Gaming_Cerebral</joyKind>
+    </building>
+    <researchPrerequisites>
+      <li>RimPlas</li>
+    </researchPrerequisites>
+    <statBases>
+      <MaxHitPoints>100</MaxHitPoints>
+      <WorkToBuild>3500</WorkToBuild>
+      <Mass>4.5</Mass>
+      <Beauty>4</Beauty>
+      <JoyGainFactor>1</JoyGainFactor>
+    </statBases>
+    <costList>
+      <RimPlas>70</RimPlas>
+    </costList>
+    <pathCost>50</pathCost>
+    <passability>PassThroughOnly</passability>
+    <designationHotKey>Misc2</designationHotKey>
+  </ThingDef>
+</Defs>

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Mould Animal Box -->
+  <RCP_AnimalSleepingBox.label>Mould Animal Box</RCP_AnimalSleepingBox.label>
+  <!-- EN: Mould a RimPlas Animal Box. -->
+  <RCP_AnimalSleepingBox.description>Mould a RimPlas Animal Box.</RCP_AnimalSleepingBox.description>
+  <!-- EN: Moulding a RimPlas Item. -->
+  <RCP_AnimalSleepingBox.jobString>Moulding a RimPlas Item.</RCP_AnimalSleepingBox.jobString>
+  <!-- EN: Mould Barrier -->
+  <RCP_Barrier.label>Mould Barrier</RCP_Barrier.label>
+  <!-- EN: Mould a RimPlas Barrier. -->
+  <RCP_Barrier.description>Mould a RimPlas Barrier.</RCP_Barrier.description>
+  <!-- EN: Moulding a RimPlas Item. -->
+  <RCP_Barrier.jobString>Moulding a RimPlas Item.</RCP_Barrier.jobString>
+  <!-- EN: Mould Chess Table -->
+  <RCP_ChessTable.label>Mould Chess Table</RCP_ChessTable.label>
+  <!-- EN: Mould a RimPlas Chess Table. -->
+  <RCP_ChessTable.description>Mould a RimPlas Chess Table.</RCP_ChessTable.description>
+  <!-- EN: Moulding a RimPlas Item. -->
+  <RCP_ChessTable.jobString>Moulding a RimPlas Item.</RCP_ChessTable.jobString>
+  <!-- EN: Mould Dining Chair -->
+  <RCP_DiningChair.label>Mould Dining Chair</RCP_DiningChair.label>
+  <!-- EN: Mould a RimPlas Dining Chair. -->
+  <RCP_DiningChair.description>Mould a RimPlas Dining Chair.</RCP_DiningChair.description>
+  <!-- EN: Moulding a RimPlas Item. -->
+  <RCP_DiningChair.jobString>Moulding a RimPlas Item.</RCP_DiningChair.jobString>
+  <!-- EN: Mould Dresser -->
+  <RCP_Dresser.label>Mould Dresser</RCP_Dresser.label>
+  <!-- EN: Mould a RimPlas Dresser. -->
+  <RCP_Dresser.description>Mould a RimPlas Dresser.</RCP_Dresser.description>
+  <!-- EN: Moulding a RimPlas Item. -->
+  <RCP_Dresser.jobString>Moulding a RimPlas Item.</RCP_Dresser.jobString>
+  <!-- EN: Mould Drug Cabinet -->
+  <RCP_DrugCabinet.label>Mould Drug Cabinet</RCP_DrugCabinet.label>
+  <!-- EN: Mould a RimPlas Drug Cabinet. -->
+  <RCP_DrugCabinet.description>Mould a RimPlas Drug Cabinet.</RCP_DrugCabinet.description>
+  <!-- EN: Moulding a RimPlas Item. -->
+  <RCP_DrugCabinet.jobString>Moulding a RimPlas Item.</RCP_DrugCabinet.jobString>
+  <!-- EN: Mould End Table -->
+  <RCP_EndTable.label>Mould End Table</RCP_EndTable.label>
+  <!-- EN: Mould a RimPlas End Table. -->
+  <RCP_EndTable.description>Mould a RimPlas End Table.</RCP_EndTable.description>
+  <!-- EN: Moulding a RimPlas Item. -->
+  <RCP_EndTable.jobString>Moulding a RimPlas Item.</RCP_EndTable.jobString>
+  <!-- EN: Mould Game of Ur -->
+  <RCP_GameOfUr.label>Mould Game of Ur</RCP_GameOfUr.label>
+  <!-- EN: Mould a RimPlas Game of Ur. -->
+  <RCP_GameOfUr.description>Mould a RimPlas Game of Ur.</RCP_GameOfUr.description>
+  <!-- EN: Moulding a RimPlas Item. -->
+  <RCP_GameOfUr.jobString>Moulding a RimPlas Item.</RCP_GameOfUr.jobString>
+  <!-- EN: Mould Plant Pot -->
+  <RCP_PlantPot.label>Mould Plant Pot</RCP_PlantPot.label>
+  <!-- EN: Mould a RimPlas Plant Pot. -->
+  <RCP_PlantPot.description>Mould a RimPlas Plant Pot.</RCP_PlantPot.description>
+  <!-- EN: Moulding a RimPlas Item. -->
+  <RCP_PlantPot.jobString>Moulding a RimPlas Item.</RCP_PlantPot.jobString>
+  <!-- EN: Mould Shelf (1x1) -->
+  <RCP_Rack.label>Mould Shelf (1x1)</RCP_Rack.label>
+  <!-- EN: Mould a RimPlas Shelf (1x1). -->
+  <RCP_Rack.description>Mould a RimPlas Shelf (1x1).</RCP_Rack.description>
+  <!-- EN: Moulding a RimPlas Item. -->
+  <RCP_Rack.jobString>Moulding a RimPlas Item.</RCP_Rack.jobString>
+  <!-- EN: Mould RimPlas -->
+  <RCP_RimPlas.label>Mould RimPlas</RCP_RimPlas.label>
+  <!-- EN: Mould some RimPlas. -->
+  <RCP_RimPlas.description>Mould some RimPlas.</RCP_RimPlas.description>
+  <!-- EN: Moulding a RimPlas Item. -->
+  <RCP_RimPlas.jobString>Moulding a RimPlas Item.</RCP_RimPlas.jobString>
+  <!-- EN: Mould RimPoly -->
+  <RCP_RimPoly.label>Mould RimPoly</RCP_RimPoly.label>
+  <!-- EN: Mould some RimPoly. -->
+  <RCP_RimPoly.description>Mould some RimPoly.</RCP_RimPoly.description>
+  <!-- EN: Moulding a RimPlas Item. -->
+  <RCP_RimPoly.jobString>Moulding a RimPlas Item.</RCP_RimPoly.jobString>
+  <!-- EN: Mould Shelf (1x2) -->
+  <RCP_Shelf.label>Mould Shelf (1x2)</RCP_Shelf.label>
+  <!-- EN: Mould a RimPlas Shelf (1x2). -->
+  <RCP_Shelf.description>Mould a RimPlas Shelf (1x2).</RCP_Shelf.description>
+  <!-- EN: Moulding a RimPlas Item. -->
+  <RCP_Shelf.jobString>Moulding a RimPlas Item.</RCP_Shelf.jobString>
+  <!-- EN: Mould Stool -->
+  <RCP_Stool.label>Mould Stool</RCP_Stool.label>
+  <!-- EN: Mould a RimPlas Stool. -->
+  <RCP_Stool.description>Mould a RimPlas Stool.</RCP_Stool.description>
+  <!-- EN: Moulding a RimPlas Item. -->
+  <RCP_Stool.jobString>Moulding a RimPlas Item.</RCP_Stool.jobString>
+  <!-- EN: Mould Table (1x2) -->
+  <RCP_Table_Small.label>Mould Table (1x2)</RCP_Table_Small.label>
+  <!-- EN: Mould a RimPlas Table (1x2). -->
+  <RCP_Table_Small.description>Mould a RimPlas Table (1x2).</RCP_Table_Small.description>
+  <!-- EN: Moulding a RimPlas Item. -->
+  <RCP_Table_Small.jobString>Moulding a RimPlas Item.</RCP_Table_Small.jobString>
+  <!-- EN: Mould Table (1x1) -->
+  <RCP_Table_Tiny.label>Mould Table (1x1)</RCP_Table_Tiny.label>
+  <!-- EN: Mould a RimPlas Table (1x1). -->
+  <RCP_Table_Tiny.description>Mould a RimPlas Table (1x1).</RCP_Table_Tiny.description>
+  <!-- EN: Moulding a RimPlas Item. -->
+  <RCP_Table_Tiny.jobString>Moulding a RimPlas Item.</RCP_Table_Tiny.jobString>
+</LanguageData>

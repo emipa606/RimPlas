@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: mould RimPlas component -->
+  <Mould_RPComponentIndustrial.label>mould RimPlas component</Mould_RPComponentIndustrial.label>
+  <!-- EN: Mould a RimPlas component. -->
+  <Mould_RPComponentIndustrial.description>Mould a RimPlas component.</Mould_RPComponentIndustrial.description>
+  <!-- EN: Mould RimPlas component. -->
+  <Mould_RPComponentIndustrial.jobString>Mould RimPlas component.</Mould_RPComponentIndustrial.jobString>
+  <!-- EN: mould RimPlas advanced component -->
+  <Mould_RPComponentSpacer.label>mould RimPlas advanced component</Mould_RPComponentSpacer.label>
+  <!-- EN: Mould a RimPlas advanced component. -->
+  <Mould_RPComponentSpacer.description>Mould a RimPlas advanced component.</Mould_RPComponentSpacer.description>
+  <!-- EN: Moulding RimPlas advanced component. -->
+  <Mould_RPComponentSpacer.jobString>Moulding RimPlas advanced component.</Mould_RPComponentSpacer.jobString>
+</LanguageData>

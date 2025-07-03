@@ -5,7 +5,7 @@ namespace RimPlas;
 
 public class CompRPHospBed : ThingComp
 {
-    public CompProperties_RPHospBed Props => (CompProperties_RPHospBed)props;
+    private CompProperties_RPHospBed Props => (CompProperties_RPHospBed)props;
 
     public override void CompTick()
     {
@@ -33,7 +33,7 @@ public class CompRPHospBed : ThingComp
                 var PainCtrlSev = Props.PainCtrlSev;
                 if (!RPHediffEffecter.HasHediff(patient, PainCtrl))
                 {
-                    RPHediffEffecter.HediffEffect(PainCtrl, PainCtrlSev, patient, null, out _);
+                    RPHediffEffecter.HediffEffect(PainCtrl, PainCtrlSev, patient, null);
                 }
             }
         }

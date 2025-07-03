@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Advanced Intelligent Materials -->
+  <RimPlas_AdvIntelMats.label>Advanced Intelligent Materials</RimPlas_AdvIntelMats.label>
+  <!-- EN: Grants the ability to make complex materials with advanced injection moulding. -->
+  <RimPlas_AdvIntelMats.description>Grants the ability to make complex materials with advanced injection moulding.</RimPlas_AdvIntelMats.description>
+  <!-- EN: Carbon Composite Materials -->
+  <RimPlas_CarbonComposites.label>Carbon Composite Materials</RimPlas_CarbonComposites.label>
+  <!-- EN: Grants the ability to use new materials -->
+  <RimPlas_CarbonComposites.description>Grants the ability to use new materials</RimPlas_CarbonComposites.description>
+  <!-- EN: Carbon synthetics -->
+  <RimPlas_CarboSynth.label>Carbon synthetics</RimPlas_CarboSynth.label>
+  <!-- EN: Grants the ability to use new materials. -->
+  <RimPlas_CarboSynth.description>Grants the ability to use new materials.</RimPlas_CarboSynth.description>
+  <!-- EN: Graphene -->
+  <RimPlas_Graphene.label>Graphene</RimPlas_Graphene.label>
+  <!-- EN: Grants the ability to use new materials. -->
+  <RimPlas_Graphene.description>Grants the ability to use new materials.</RimPlas_Graphene.description>
+  <!-- EN: Graphene Electroliser Generator -->
+  <RPGrapheneElectroliser.label>Graphene Electroliser Generator</RPGrapheneElectroliser.label>
+  <!-- EN: Grants the ability to construct the graphene electroliser generator. -->
+  <RPGrapheneElectroliser.description>Grants the ability to construct the graphene electroliser generator.</RPGrapheneElectroliser.description>
+  <!-- EN: Graphene Security Doors -->
+  <RPSecurityDoors.label>Graphene Security Doors</RPSecurityDoors.label>
+  <!-- EN: Grants the ability to construct intelligent security doors. -->
+  <RPSecurityDoors.description>Grants the ability to construct intelligent security doors.</RPSecurityDoors.description>
+</LanguageData>

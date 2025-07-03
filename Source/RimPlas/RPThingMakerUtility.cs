@@ -15,7 +15,7 @@ public class RPThingMakerUtility
     public const string RCP_PWool = "RimPlas_Plasteel_Wool";
 
     [NoTranslate]
-    public static readonly string ThingIconPath = "Things/Building/Misc/RPThingMaker/UI/RPThingMaker_ThingIcon";
+    private static readonly string ThingIconPath = "Things/Building/Misc/RPThingMaker/UI/RPThingMaker_ThingIcon";
 
     public static Texture2D GetRPThingIcon(ThingDef t)
     {
@@ -38,7 +38,7 @@ public class RPThingMakerUtility
         var texturePath = t.graphicData.texPath;
         if (t.graphicData.graphicClass.Name == "Graphic_StackCount")
         {
-            texturePath = texturePath + "/" + t.defName + "_a";
+            texturePath = $"{texturePath}/{t.defName}_a";
         }
 
         return ContentFinder<Texture2D>.Get(texturePath);

@@ -36,7 +36,7 @@ public class RPCompPowerPlantWind : CompPowerPlant
     private static readonly Material WindTurbineBladesMat =
         MaterialPool.MatFrom("Things/Building/Power/RPGrapheneWindTurbine/RPGrapheneWindTurbineBlades");
 
-    public readonly int updateWeatherEveryXTicks = 250;
+    private readonly int updateWeatherEveryXTicks = 250;
 
     private readonly List<Thing> windPathBlockedByThings = [];
 
@@ -186,6 +186,11 @@ public class RPCompPowerPlantWind : CompPowerPlant
         windPathBlockedByThings.Clear();
         foreach (var intVec in windPathCells)
         {
+            if (!intVec.InBounds(parent.Map))
+            {
+                continue;
+            }
+
             if (parent.Map.roofGrid.Roofed(intVec))
             {
                 windPathBlockedByThings.Add(null);

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: Graphene Nanosuit -->
+  <RPGrapheneNanoSuit.label>Graphene Nanosuit</RPGrapheneNanoSuit.label>
+  <!-- EN: A metallic body garment constructed using mechanites to arrange Graphene Nano fibres and Hyperweave into an intelligent lattice. -->
+  <RPGrapheneNanoSuit.description>A metallic body garment constructed using mechanites to arrange Graphene Nano fibres and Hyperweave into an intelligent lattice.</RPGrapheneNanoSuit.description>
+  <!-- EN: Graphene Shielded Nanosuit -->
+  <RPGrapheneShieldNanoSuit.label>Graphene Shielded Nanosuit</RPGrapheneShieldNanoSuit.label>
+  <!-- EN: A metallic body garment constructed using mechanites to arrange Graphene Nano fibres and Hyperweave into an intelligent lattice. This version is shielded. -->
+  <RPGrapheneShieldNanoSuit.description>A metallic body garment constructed using mechanites to arrange Graphene Nano fibres and Hyperweave into an intelligent lattice. This version is shielded.</RPGrapheneShieldNanoSuit.description>
+</LanguageData>

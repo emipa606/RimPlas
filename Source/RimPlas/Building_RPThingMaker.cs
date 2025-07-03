@@ -10,50 +10,47 @@ namespace RimPlas;
 
 public class Building_RPThingMaker : Building
 {
-    public static readonly string UITexPath = "Things/Building/Misc/RPThingMaker/UI/";
+    private static readonly string UITexPath = "Things/Building/Misc/RPThingMaker/UI/";
 
-    [NoTranslate] private readonly string debugTexPath = UITexPath + "RPThingMakerDebug_Icon";
+    [NoTranslate] private readonly string debugTexPath = $"{UITexPath}RPThingMakerDebug_Icon";
 
-    public readonly float effeciencyFactor = 0.95f;
+    private readonly float effeciencyFactor = 0.95f;
 
     [NoTranslate] private readonly string EndLimitPath = "Limit_icon";
 
-    [NoTranslate] private readonly string FrontLimitPath = UITexPath + "StockLimits/RPThingMakerStock";
+    [NoTranslate] private readonly string FrontLimitPath = $"{UITexPath}StockLimits/RPThingMakerStock";
 
-    [NoTranslate] private readonly string produceTexPath = UITexPath + "RPThingMakerProduce_Icon";
+    [NoTranslate] private readonly string produceTexPath = $"{UITexPath}RPThingMakerProduce_Icon";
 
-    [NoTranslate] private readonly string thingTexPath = UITexPath + "RPThingMaker_ThingIcon";
+    [NoTranslate] private readonly string thingTexPath = $"{UITexPath}RPThingMaker_ThingIcon";
 
     private List<IntVec3> cachedAdjCellsCardinal;
 
-    public bool debug;
+    private bool debug;
 
-    public bool isProducing;
+    private bool isProducing;
 
-    public ThingDef MakerThingDef;
+    private ThingDef MakerThingDef;
 
-    public Sustainer makeSustainer;
+    private Sustainer makeSustainer;
 
-    public int NumProd;
+    private int NumProd;
 
-    public CompPowerTrader powerComp;
+    private CompPowerTrader powerComp;
 
-    public int ProdWorkTicks;
+    private int ProdWorkTicks;
 
-    public int StockLimit;
+    private int StockLimit;
 
-    public int TotalProdWorkTicks;
+    private int TotalProdWorkTicks;
 
     private List<IntVec3> AdjCellsCardinalInBounds
     {
         get
         {
-            if (cachedAdjCellsCardinal == null)
-            {
-                cachedAdjCellsCardinal = (from c in GenAdj.CellsAdjacentCardinal(this)
-                    where c.InBounds(Map)
-                    select c).ToList();
-            }
+            cachedAdjCellsCardinal ??= (from c in GenAdj.CellsAdjacentCardinal(this)
+                where c.InBounds(Map)
+                select c).ToList();
 
             return cachedAdjCellsCardinal;
         }
@@ -77,21 +74,20 @@ public class Building_RPThingMaker : Building
         cachedAdjCellsCardinal = AdjCellsCardinalInBounds;
     }
 
-    public void StartMakeSustainer()
+    private void startMakeSustainer()
     {
         var info = SoundInfo.InMap(this, MaintenanceType.PerTick);
         makeSustainer = SoundDef.Named("RPThingMaker").TrySpawnSustainer(info);
     }
 
-    public override void Tick()
+    protected override void Tick()
     {
         base.Tick();
         if (debug && Find.TickManager.TicksGame % 100 == 0)
         {
-            var debugMsg = "At Tick: " + Find.TickManager.TicksGame;
-            debugMsg = string.Concat(debugMsg, " : (", MakerThingDef != null ? MakerThingDef.defName : "Null",
-                ") : Prod: ", isProducing ? "True" : "false", " : Num: ", NumProd.ToString(), " : PWT: ",
-                ProdWorkTicks.ToString());
+            var debugMsg = $"At Tick: {Find.TickManager.TicksGame}";
+            debugMsg =
+                $"{debugMsg} : ({(MakerThingDef != null ? MakerThingDef.defName : "Null")}) : Prod: {(isProducing ? "True" : "false")} : Num: {NumProd} : PWT: {ProdWorkTicks}";
             Log.Message(debugMsg);
         }
 
@@ -104,99 +100,100 @@ public class Building_RPThingMaker : Building
         if (ProdWorkTicks > 0 && isProducing)
         {
             ProdWorkTicks--;
-            if (makeSustainer == null)
+            if (makeSustainer == null || makeSustainer.Ended)
             {
-                StartMakeSustainer();
-                return;
-            }
-
-            if (makeSustainer.Ended)
-            {
-                StartMakeSustainer();
+                startMakeSustainer();
                 return;
             }
 
             makeSustainer.Maintain();
         }
-        else if (isProducing && NumProd > 0 && MakerThingDef != null)
+        else
         {
-            if (debug)
+            switch (isProducing)
             {
-                Log.Message("Production point: " + MakerThingDef.defName + " : " + ProdWorkTicks);
-            }
-
-            if (ValidateOutput(MakerThingDef, out var hasSpace, out var candidatesOut) && hasSpace > 0)
-            {
-                if (hasSpace >= NumProd)
+                case true when NumProd > 0 && MakerThingDef != null:
                 {
                     if (debug)
                     {
-                        Log.Message("Ejecting: " + MakerThingDef.defName + " : " + NumProd);
+                        Log.Message($"Production point: {MakerThingDef.defName} : {ProdWorkTicks}");
                     }
 
-                    MakerEject(this, MakerThingDef, NumProd, candidatesOut, out var Surplus);
-                    NumProd = Surplus;
+                    if (validateOutput(MakerThingDef, out var hasSpace, out var candidatesOut) && hasSpace > 0)
+                    {
+                        if (hasSpace >= NumProd)
+                        {
+                            if (debug)
+                            {
+                                Log.Message($"Ejecting: {MakerThingDef.defName} : {NumProd}");
+                            }
+
+                            makerEject(MakerThingDef, NumProd, candidatesOut, out var Surplus);
+                            NumProd = Surplus;
+                        }
+                        else
+                        {
+                            if (debug)
+                            {
+                                Log.Message($"Ejecting: {MakerThingDef.defName} : {hasSpace}");
+                            }
+
+                            makerEject(MakerThingDef, hasSpace, candidatesOut, out var Surplus2);
+                            NumProd -= hasSpace - Surplus2;
+                        }
+                    }
+
+                    if (NumProd == 0)
+                    {
+                        TotalProdWorkTicks = 0;
+                    }
+
+                    break;
                 }
-                else
+                case true when MakerThingDef != null && validateRecipe(MakerThingDef, out var useMax,
+                    out var recipeList, out var minProd, out var maxProd, out var ticks):
                 {
                     if (debug)
                     {
-                        Log.Message("Ejecting: " + MakerThingDef.defName + " : " + hasSpace);
+                        Log.Message(
+                            $"StartProduction: {MakerThingDef.defName} :  RCP Items: {recipeList.Count}");
                     }
 
-                    MakerEject(this, MakerThingDef, hasSpace, candidatesOut, out var Surplus2);
-                    NumProd -= hasSpace - Surplus2;
+                    if (recipeList.Count <= 0)
+                    {
+                        return;
+                    }
+
+                    for (var i = 0; i < recipeList.Count; i++)
+                    {
+                        var recipeThingDef = recipeList[i].def;
+                        var num = useMax ? recipeList[i].Max : recipeList[i].Min;
+
+                        if (debug)
+                        {
+                            Log.Message(
+                                $"Removing: {(useMax ? "Max" : "Min")}: {num} ({recipeThingDef.defName})");
+                        }
+
+                        removeRecipeItems(recipeThingDef, num);
+                    }
+
+                    NumProd = minProd;
+                    if (useMax)
+                    {
+                        NumProd = maxProd;
+                    }
+
+                    ProdWorkTicks = (int)(ticks * effeciencyFactor * NumProd);
+                    TotalProdWorkTicks = ProdWorkTicks;
+                    break;
                 }
             }
-
-            if (NumProd == 0)
-            {
-                TotalProdWorkTicks = 0;
-            }
-        }
-        else if (isProducing && MakerThingDef != null && ValidateRecipe(MakerThingDef, out var UseMax,
-                     out var RecipeList, out var minProd, out var maxProd, out var ticks))
-        {
-            if (debug)
-            {
-                Log.Message(
-                    string.Concat("StartProduction: ", MakerThingDef.defName, " :  RCP Items: ",
-                        RecipeList.Count));
-            }
-
-            if (RecipeList.Count <= 0)
-            {
-                return;
-            }
-
-            for (var i = 0; i < RecipeList.Count; i++)
-            {
-                var recipeThingDef = RecipeList[i].def;
-                var num = UseMax ? RecipeList[i].Max : RecipeList[i].Min;
-
-                if (debug)
-                {
-                    Log.Message(
-                        string.Concat("Removing: ", UseMax ? "Max" : "Min", ": ", num.ToString(), " (",
-                            recipeThingDef.defName, ")"));
-                }
-
-                RemoveRecipeItems(recipeThingDef, num);
-            }
-
-            NumProd = minProd;
-            if (UseMax)
-            {
-                NumProd = maxProd;
-            }
-
-            ProdWorkTicks = (int)(ticks * effeciencyFactor * NumProd);
-            TotalProdWorkTicks = ProdWorkTicks;
         }
     }
 
 
-    public void MakerEject(Building b, ThingDef t, int numProducts, List<Building> candidatesout, out int remaining)
+    private void makerEject(ThingDef t, int numProducts, List<Building> candidatesout, out int remaining)
     {
         remaining = numProducts;
         if (candidatesout.Count <= 0)
@@ -284,16 +281,16 @@ public class Building_RPThingMaker : Building
         }
     }
 
-    public void RemoveRecipeItems(ThingDef t, int numToRemove)
+    private void removeRecipeItems(ThingDef t, int numToRemove)
     {
-        var AdjCells = AdjCellsCardinalInBounds;
-        if (AdjCells.Count <= 0)
+        var adjCells = AdjCellsCardinalInBounds;
+        if (adjCells.Count <= 0)
         {
             return;
         }
 
-        var TotalRemoved = 0;
-        for (var i = 0; i < AdjCells.Count; i++)
+        var totalRemoved = 0;
+        for (var i = 0; i < adjCells.Count; i++)
         {
             if (numToRemove <= 0)
             {
@@ -303,7 +300,7 @@ public class Building_RPThingMaker : Building
             var isInputCell = false;
             var has = 0;
             var candidates = new List<Thing>();
-            var thingList = AdjCells[i].GetThingList(Map);
+            var thingList = adjCells[i].GetThingList(Map);
             if (thingList.Count > 0)
             {
                 foreach (var thing in thingList)
@@ -336,13 +333,13 @@ public class Building_RPThingMaker : Building
                 if (numToRemove - thing.stackCount >= 0)
                 {
                     numToRemove -= thing.stackCount;
-                    TotalRemoved += thing.stackCount;
+                    totalRemoved += thing.stackCount;
                     thing.Destroy();
                 }
                 else
                 {
                     thing.stackCount -= numToRemove;
-                    TotalRemoved += numToRemove;
+                    totalRemoved += numToRemove;
                     numToRemove = 0;
                 }
             }
@@ -350,22 +347,22 @@ public class Building_RPThingMaker : Building
 
         if (debug)
         {
-            Log.Message("Total Removed: (" + t.defName + ") = " + TotalRemoved);
+            Log.Message($"Total Removed: ({t.defName}) = {totalRemoved}");
         }
     }
 
-    public bool ValidateOutput(ThingDef t, out int hasSpace, out List<Building> candidatesOut)
+    private bool validateOutput(ThingDef t, out int hasSpace, out List<Building> candidatesOut)
     {
         hasSpace = 0;
         candidatesOut = [];
-        var AdjCells = AdjCellsCardinalInBounds;
-        if (AdjCells.Count > 0)
+        var adjCells = AdjCellsCardinalInBounds;
+        if (adjCells.Count > 0)
         {
-            for (var i = 0; i < AdjCells.Count; i++)
+            for (var i = 0; i < adjCells.Count; i++)
             {
                 var isOutputCell = false;
                 var has = 0;
-                var thingList = AdjCells[i].GetThingList(Map);
+                var thingList = adjCells[i].GetThingList(Map);
                 if (thingList.Count > 0)
                 {
                     foreach (var thing in thingList)
@@ -395,23 +392,23 @@ public class Building_RPThingMaker : Building
 
         if (debug)
         {
-            Log.Message(hasSpace + " item space on " + candidatesOut.Count + " points");
+            Log.Message($"{hasSpace} item space on {candidatesOut.Count} points");
         }
 
         return hasSpace > 0;
     }
 
-    public bool ValidateRecipe(ThingDef t, out bool CanUseMax, out List<RCPItemCanUse> FinalList, out int MinProd,
+    private bool validateRecipe(ThingDef t, out bool canUseMax, out List<RCPItemCanUse> finalList, out int MinProd,
         out int MaxProd, out int Ticks)
     {
-        CanUseMax = true;
-        FinalList = null;
+        canUseMax = true;
+        finalList = null;
         MinProd = 0;
         MaxProd = 0;
         Ticks = 0;
         if (debug && Find.TickManager.TicksGame % 100 == 0)
         {
-            Log.Message("ValRep: " + t.defName);
+            Log.Message($"ValRep: {t.defName}");
         }
 
         if (!RPThingMakerUtility.RCPProdValues(t, out var ticks, out var minProd, out var maxProd, out var Res))
@@ -425,8 +422,7 @@ public class Building_RPThingMaker : Building
         if (debug)
         {
             Log.Message(
-                string.Concat("RCPVals: Ticks: ", ticks.ToString(), " minProd: ", minProd.ToString(), " maxProd: ",
-                    maxProd.ToString(), " Res: ", Res));
+                $"RCPVals: Ticks: {ticks} minProd: {minProd} maxProd: {maxProd} Res: {Res}");
         }
 
         if (!ResearchProjectDef.Named(Res).IsFinished || minProd <= 0 || maxProd <= 0 || ticks <= 0)
@@ -466,7 +462,7 @@ public class Building_RPThingMaker : Building
 
         if (debug)
         {
-            Log.Message("RCP Listings: " + listRCP.Count);
+            Log.Message($"RCP Listings: {listRCP.Count}");
         }
 
         var RCPListPotentials = new List<RCPItemCanUse>();
@@ -507,10 +503,10 @@ public class Building_RPThingMaker : Building
         if (debug)
         {
             Log.Message(
-                "InnerRecipe List: Groups: " + RCPGroups.Count + " , Potentials: " + RCPListPotentials.Count);
+                $"InnerRecipe List: Groups: {RCPGroups.Count} , Potentials: {RCPListPotentials.Count}");
         }
 
-        FinalList = [];
+        finalList = [];
         var NotAllGroups = false;
         if (RCPGroups.Count > 0)
         {
@@ -564,7 +560,7 @@ public class Building_RPThingMaker : Building
                         bestthingsofar.Max = 0;
                     }
 
-                    FinalList.Add(bestthingsofar);
+                    finalList.Add(bestthingsofar);
                 }
 
                 if (foundGroup)
@@ -577,13 +573,13 @@ public class Building_RPThingMaker : Building
             }
         }
 
-        if (FinalList.Count > 0)
+        if (finalList.Count > 0)
         {
-            for (var l = 0; l < FinalList.Count; l++)
+            for (var l = 0; l < finalList.Count; l++)
             {
-                if (FinalList[l].Max == 0)
+                if (finalList[l].Max == 0)
                 {
-                    CanUseMax = false;
+                    canUseMax = false;
                 }
             }
         }
@@ -600,13 +596,13 @@ public class Building_RPThingMaker : Building
 
         if (debug)
         {
-            Log.Message("RCP is True. with (" + FinalList.Count + ") final list items");
+            Log.Message($"RCP is True. with ({finalList.Count}) final list items");
         }
 
         return true;
     }
 
-    public static void DoNotFoundGroupsOverlay(Building_RPThingMaker b, ThingDef def, int grp)
+    private static void DoNotFoundGroupsOverlay(Building_RPThingMaker b, ThingDef def, int grp)
     {
         if (Find.CurrentMap == null || Find.CurrentMap != b.Map)
         {
@@ -694,12 +690,11 @@ public class Building_RPThingMaker : Building
         {
             var IconToUse = RPThingMakerUtility.GetRPThingIcon(MakerThingDef);
             var LabelDetail = MakerThingDef.label.CapitalizeFirst();
-            LabelDetail = string.Concat(LabelDetail, " [", NumProd, "] ");
+            LabelDetail = $"{LabelDetail} [{NumProd}] ";
             if (TotalProdWorkTicks > 0)
             {
-                LabelDetail = LabelDetail + " (" +
-                              (int)((TotalProdWorkTicks - ProdWorkTicks) / (float)TotalProdWorkTicks * 100f) +
-                              "%)";
+                LabelDetail =
+                    $"{LabelDetail} ({(int)((TotalProdWorkTicks - ProdWorkTicks) / (float)TotalProdWorkTicks * 100f)}%)";
             }
 
             yield return new Command_Action
@@ -784,17 +779,17 @@ public class Building_RPThingMaker : Building
         }
     }
 
-    public void ToggleDebug(bool flag)
+    private void ToggleDebug(bool flag)
     {
         debug = !flag;
     }
 
-    public void ToggleProducing(bool flag)
+    private void ToggleProducing(bool flag)
     {
         isProducing = !flag;
     }
 
-    public void RPMakerSelectLimit()
+    private void RPMakerSelectLimit()
     {
         var list = new List<FloatMenuOption>();
         var Choices = RPThingMakerUtility.GetMaxStock();
@@ -821,11 +816,11 @@ public class Building_RPThingMaker : Building
         Find.WindowStack.Add(new FloatMenu(list));
     }
 
-    public void RPMakerSelectThing()
+    private void RPMakerSelectThing()
     {
         var list = new List<FloatMenuOption>();
         string text = "RPThingMaker.SelNoThing".Translate();
-        list.Add(new FloatMenuOption(text, delegate { SetProdControlValues(null, false, 0, 0); },
+        list.Add(new FloatMenuOption(text, delegate { SetProdControlValues(null); },
             MenuOptionPriority.Default, null, null, 29f));
         var Choices = RPThingMakerUtility.GetMakeList();
         if (Choices.Count > 0)
@@ -836,7 +831,7 @@ public class Building_RPThingMaker : Building
                 text = ChoiceDef.label.CapitalizeFirst();
                 if (IsThingAvailable(ChoiceDef))
                 {
-                    list.Add(new FloatMenuOption(text, delegate { SetProdControlValues(ChoiceDef, true, 0, 0); },
+                    list.Add(new FloatMenuOption(text, delegate { SetProdControlValues(ChoiceDef); },
                         MenuOptionPriority.Default, null, null, 29f,
                         rect => Widgets.InfoCardButton(rect.x + 5f, rect.y + ((rect.height - 24f) / 2f),
                             ChoiceDef)));
@@ -847,12 +842,12 @@ public class Building_RPThingMaker : Building
         Find.WindowStack.Add(new FloatMenu(list));
     }
 
-    public void SetStockLimits(int aStockLim)
+    private void SetStockLimits(int aStockLim)
     {
         StockLimit = aStockLim;
     }
 
-    public void SetProdControlValues(ThingDef tdef, bool prod, int num, int ticks)
+    private void SetProdControlValues(ThingDef tdef)
     {
         if (tdef == null)
         {
@@ -875,18 +870,18 @@ public class Building_RPThingMaker : Building
         TotalProdWorkTicks = 0;
     }
 
-    public bool IsWorking(Building b)
+    private bool IsWorking(Building b)
     {
         return !b.IsBrokenDown() && powerComp.PowerOn;
     }
 
-    public static bool IsThingAvailable(ThingDef chkDef)
+    private static bool IsThingAvailable(ThingDef chkDef)
     {
         return RPThingMakerUtility.RCPProdValues(chkDef, out _, out _, out _, out var research) &&
                research != "" && DefDatabase<ResearchProjectDef>.GetNamed(research, false).IsFinished;
     }
 
-    public static bool StockLimitReached(Building b, ThingDef stockThing, int stockLim, out int ActualStockNum)
+    private static bool StockLimitReached(Building b, ThingDef stockThing, int stockLim, out int ActualStockNum)
     {
         ActualStockNum = 0;
         if (stockLim <= 0 || stockThing == null)
@@ -908,7 +903,7 @@ public class Building_RPThingMaker : Building
         return ActualStockNum >= stockLim;
     }
 
-    public virtual bool HasEnoughMaterialInHoppers(ThingDef NeededThing, int required, bool isMin)
+    protected virtual bool HasEnoughMaterialInHoppers(ThingDef NeededThing, int required, bool isMin)
     {
         var num = 0;
         foreach (var c in AdjCellsCardinalInBounds)
@@ -938,15 +933,13 @@ public class Building_RPThingMaker : Building
         if (debug)
         {
             Log.Message(
-                string.Concat("Enough Materials? (", num >= required ? "Yes" : "No", "): (", NeededThing.defName,
-                    ") Found:", num.ToString(), " for ", required.ToString(), " required as ",
-                    isMin ? "Min" : "Max"));
+                $"Enough Materials? ({(num >= required ? "Yes" : "No")}): ({NeededThing.defName}) Found:{num} for {required} required as {(isMin ? "Min" : "Max")}");
         }
 
         return num >= required;
     }
 
-    public struct RCPItemCanUse
+    private struct RCPItemCanUse
     {
         public ThingDef def;
 
