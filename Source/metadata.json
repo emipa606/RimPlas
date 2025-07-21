@@ -3,15 +3,16 @@
   "CanAdd": "0",
   "CanRemove": "2",
   "PreviewVersion": "1.6",
-  "LastXmlCleaning": "2025-07-03T22:02:16.1258338+02:00",
+  "LastXmlCleaning": "2025-07-21T20:49:31.988555+02:00",
   "SocialImageSet": true,
   "Patches": true,
   "Defs": true,
   "Assemblies": true,
-  "LinesOfCode": 107309.0,
-  "LinesOfXML": 267679.0,
+  "LinesOfCode": 107309,
+  "LinesOfXML": 267716,
   "SearchTags": [
     " materials",
     " research"
-  ]
+  ],
+  "CodeBaseSize": 88
 }
